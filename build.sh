@@ -35,6 +35,6 @@ for tag in "${image}:latest" "${image}:latest-${DATE}" "${image}:${VERSION}"; do
     set -x
     docker build ${DOCKER_BUILD_OPTIONS} -t ${tag} .
     docker inspect ${tag}
-    #docker push ${tag}
+    docker push ${tag}
     set +x
 done
