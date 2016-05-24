@@ -1,0 +1,18 @@
+ckanserviceprovider==0.0.5
+# the pypy tarball is missing some files, use git instead
+git+git://github.com/ckan/ckan.git@ckan-2.5.2
+ckanapi==3.5
+ckantoolkit==0.0.2
+git+git://github.com/ckan/datapusher.git@0.0.8
+git+git://github.com/ckan/ckanext-pdfview.git@0.0.5
+git+git://github.com/ckan/ckanext-geoview.git@v0.0.10
+# local forks so we can tag them (no upstream releases)
+git+git://github.com/muccg/ckanext-pages.git@0.0.3
+git+git://github.com/muccg/ckanext-spatial.git@0.0.2
+git+git://github.com/muccg/ckanext-scheming.git@interim-1.0.1
+git+git://github.com/muccg/ckan-galleries.git@0.0.2
+git+git://github.com/muccg/ckanext-hierarchy.git@0.0.3
+git+git://github.com/muccg/ckanext-bpatheme.git@0.0.11
+uWSGI==2.0.13
+uwsgitop
+testrepository
