@@ -28,13 +28,13 @@ echo $DOCKER_BUILD_OPTIONS
 image="${REPO}/bpa-ckan"
 echo "################################################################### ${image}"
 ## warm up cache for CI
-docker pull ${image} || true
+# docker pull ${image} || true
 
 for tag in "${image}:latest" "${image}:latest-${DATE}" "${image}:${VERSION}"; do
     echo "############################################################# ${tag}"
     set -x
     docker build ${DOCKER_BUILD_OPTIONS} -t ${tag} .
     docker inspect ${tag}
-    docker push ${tag}
+    #docker push ${tag}
     set +x
 done
