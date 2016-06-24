@@ -9,7 +9,7 @@ set -e
 REPO="muccg"
 DATE=`date +%Y.%m.%d`
 
-VERSION="0.0.3"
+VERSION="0.0.4"
 
 if [ x"$1" = xproxy ]; then
     echo "using proxy"
