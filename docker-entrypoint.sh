@@ -62,36 +62,33 @@ function defaults {
     : ${SOLRSERVER:="solr"}
     : ${SOLRPORT:="8983"}
 
-    # currently supported environment variables
-    # while these are useful, annoyingly they aren't respect when using paster
     : ${CKAN_INI="/etc/ckan/default/ckan.ini"}
-    #'sqlalchemy.url': 'CKAN_SQLALCHEMY_URL',
     : ${CKAN_SQLALCHEMY_URL="postgres://${DBUSER}:${DBPASS}@${DBSERVER}/${DBNAME}"}
-    #'ckan.datastore.write_url': 'CKAN_DATASTORE_WRITE_URL',
-    #'ckan.datastore.read_url': 'CKAN_DATASTORE_READ_URL',
     : ${CKAN_DATASTORE_WRITE_URL="postgres://${DATASTORE_DBUSER}:${DATASTORE_DBPASS}@${DATASTORE_DBSERVER}/${DATASTORE_DBNAME}"}
     : ${CKAN_DATASTORE_READ_URL="postgres://${DATASTORE_DB_READONLY_USER}:${DATASTORE_DB_READONLY_PASS}@${DATASTORE_DBSERVER}/${DATASTORE_DBNAME}"}
-    #'solr_url': 'CKAN_SOLR_URL',
     : ${CKAN_SOLR_URL="http://solr:8983/solr/ckan"}
-    #'ckan.site_id': 'CKAN_SITE_ID',
-    #'ckan.site_url': 'CKAN_SITE_URL',
     : ${CKAN_SITE_URL:="https://localhost:8443/app/"}
     : ${CKAN_STORAGE_PATH:='/var/www/storage/'}
-    #'ckan.datapusher.url': 'CKAN_DATAPUSHER_URL',
-    #'smtp.server': 'CKAN_SMTP_SERVER',
-    #'smtp.starttls': 'CKAN_SMTP_STARTTLS',
-    #'smtp.user': 'CKAN_SMTP_USER',
-    #'smtp.password': 'CKAN_SMTP_PASSWORD',
-    #'smtp.mail_from': 'CKAN_SMTP_MAIL_FROM'
 
     export DBSERVER DBPORT DBUSER DBNAME DBPASS MEMCACHE DOCKER_ROUTE
     export DATASTORE_DBSERVER DATASTORE_DBPORT DATASTORE_DBUSER DATASTORE_DBNAME DATASTORE_DBPASS
     export CKAN_INI CKAN_SITE_URL CKAN_SQLALCHEMY_URL CKAN_DATASTORE_WRITE_URL CKAN_DATASTORE_READ_URL CKAN_SOLR_URL CKAN_STORAGE_PATH
+    export AWS_ACCESS_KEY_ID AWS_SECRET_ACCESS_KEY AWS_BUCKET_NAME AWS_STORAGE_PATH SESSION_SECRET
+}
+
+function make_config {
+    cat /etc/ckan/default/ckan.ini.in | \
+        sed -e "s/@AWS_ACCESS_KEY_ID@/$AWS_ACCESS_KEY_ID/" \
+            -e "s/@AWS_SECRET_ACCESS_KEY@/$AWS_SECRET_ACCESS_KEY/" \
+            -e "s/@AWS_BUCKET_NAME@/$AWS_BUCKET_NAME/" \
+            -e "s/@AWS_STORAGE_PATH@/$AWS_STORAGE_PATH/" \
+            -e "s/@SESSION_SECRET@/$SESSION_SECRET/" > /etc/ckan/default/ckan.ini
 }
 
 
 trap exit SIGHUP SIGINT SIGTERM
 defaults
+make_config
 env | grep -iv PASS | sort
 wait_for_services
 

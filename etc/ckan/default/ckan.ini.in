@@ -35,7 +35,7 @@ ckan.site_intro_text = # Bioplatforms Australia Data Access
 # This is the secret token that the beaker library uses to hash the cookie sent
 # to the client. `paster make-config` generates a unique value for this each
 # time it generates a config file.
-beaker.session.secret = 5hfR+8EjTSgXwLKtYQW+ioUZ5
+beaker.session.secret = @SESSION_SECRET@
 
 # `paster make-config` generates a unique value for this each time it generates
 # a config file.
@@ -139,6 +139,11 @@ ckan.display_timezone = server
 #licenses_group_url = http://licenses.opendefinition.org/licenses/groups/ckan.json
 # ckan.template_footer_end =
 
+ckanext.s3filestore.aws_access_key_id = @AWS_ACCESS_KEY_ID@
+ckanext.s3filestore.aws_secret_access_key = @AWS_SECRET_ACCESS_KEY@
+ckanext.s3filestore.aws_bucket_name = @AWS_BUCKET_NAME@
+ckanext.s3filestore.aws_storage_path = @AWS_STORAGE_PATH@
+ckanext.s3filestore.filesystem_download_fallback = false
 
 ## Internationalisation Settings
 ckan.locale_default = en
