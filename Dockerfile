@@ -52,6 +52,11 @@ RUN curl -o /etc/ckan/ckanext-spatial-requirements.txt https://raw.githubusercon
 RUN curl -o /etc/ckan/ckan-requirements.txt https://raw.githubusercontent.com/ckan/ckan/ckan-2.5.2/requirements.txt \
   && NO_PROXY=${ARG_PIP_TRUSTED_HOST} pip ${ARG_PIP_OPTS} --trusted-host ${ARG_PIP_TRUSTED_HOST} install -i ${ARG_PIP_INDEX_URL} --upgrade -r /etc/ckan/ckan-requirements.txt
 
+# this is a hack: html5lib made a breaking change, and it's broken the whole
+# ckan universe. rather than forking everything, hard wire the fix here for now.
+RUN NO_PROXY=${ARG_PIP_TRUSTED_HOST} pip ${ARG_PIP_OPTS} --trusted-host ${ARG_PIP_TRUSTED_HOST} install -i ${ARG_PIP_INDEX_URL} html5lib==0.999
+
+
 COPY docker-entrypoint.sh /docker-entrypoint.sh
 RUN curl -o /etc/ckan/default/who.ini https://raw.githubusercontent.com/ckan/ckan/ckan-2.5.2/ckan/config/who.ini
 
