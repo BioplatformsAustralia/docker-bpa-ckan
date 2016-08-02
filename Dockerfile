@@ -1,7 +1,7 @@
 FROM muccg/python-base:debian8-2.7
 MAINTAINER https://github.com/muccg/bpa-ckan-docker
 
-# At build time change these args allow to use a local devpi mirror
+# At build time change these args to use a local devpi mirror
 # Unchanged, these defaults allow pip to behave as normal
 ARG ARG_PIP_OPTS="--no-cache-dir"
 ARG ARG_PIP_INDEX_URL="https://pypi.python.org/simple"
