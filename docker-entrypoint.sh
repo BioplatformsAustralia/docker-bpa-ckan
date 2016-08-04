@@ -78,11 +78,11 @@ function defaults {
 
 function make_config {
     cat /etc/ckan/default/ckan.ini.in | \
-        sed -e "s/@AWS_ACCESS_KEY_ID@/$AWS_ACCESS_KEY_ID/" \
-            -e "s/@AWS_SECRET_ACCESS_KEY@/$AWS_SECRET_ACCESS_KEY/" \
-            -e "s/@AWS_BUCKET_NAME@/$AWS_BUCKET_NAME/" \
-            -e "s/@AWS_STORAGE_PATH@/$AWS_STORAGE_PATH/" \
-            -e "s/@SESSION_SECRET@/$SESSION_SECRET/" > /etc/ckan/default/ckan.ini
+        sed -e "s#@AWS_ACCESS_KEY_ID@#$AWS_ACCESS_KEY_ID#" \
+            -e "s#@AWS_SECRET_ACCESS_KEY@#$AWS_SECRET_ACCESS_KEY#" \
+            -e "s#@AWS_BUCKET_NAME@#$AWS_BUCKET_NAME#" \
+            -e "s#@AWS_STORAGE_PATH@#$AWS_STORAGE_PATH#" \
+            -e "s#@SESSION_SECRET@#$SESSION_SECRET#" > /etc/ckan/default/ckan.ini
 }
 
 
