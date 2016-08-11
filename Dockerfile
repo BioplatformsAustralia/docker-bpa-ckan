@@ -14,23 +14,22 @@ RUN env | sort
 
 RUN apt-get update && apt-get install -y --no-install-recommends \
   build-essential \
-  python-pil \
   curl \
   git \
-  libpcre3 \
   libgeos-c1 \
-  libpq5 \
-  libxml2 \
-  libpcre3-dev \
   libjpeg-dev \
+  libpcre3 \
+  libpcre3-dev \
   libpng12-dev \
+  libpq5 \
   libpq-dev \
   libssl-dev \
   libyaml-dev \
+  libxml2 \
   libxml2-dev \
   libxslt1-dev \
+  python-pil \
   zlib1g-dev \
-  libgeos-c1 \
   && apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 RUN mkdir -p /etc/ckan /var/www/storage && \
