@@ -3,7 +3,6 @@ MAINTAINER https://github.com/muccg/bpa-ckan-docker
 
 # At build time change these args to use a local devpi mirror
 # Unchanged, these defaults allow pip to behave as normal
-ARG ARG_PIP_OPTS="--no-cache-dir"
 ARG ARG_PIP_INDEX_URL="https://pypi.python.org/simple"
 ARG ARG_PIP_TRUSTED_HOST="127.0.0.1"
 
@@ -40,9 +39,6 @@ RUN mkdir -p /etc/ckan /var/www/storage && \
 
 COPY etc/ckan /etc/ckan/
 COPY etc/uwsgi /etc/uwsgi/
-
-# ckan will pull in pbr. pbr in turn will upgrade pip. this is a preemptive strike
-RUN NO_PROXY=${PIP_TRUSTED_HOST} pip install --upgrade pip==${PYTHON_PIP_VERSION}
 
 # http://docs.ckan.org/en/latest/maintaining/installing/install-from-source.html
 RUN NO_PROXY=${PIP_TRUSTED_HOST} pip install --upgrade -r /etc/ckan/requirements.txt
