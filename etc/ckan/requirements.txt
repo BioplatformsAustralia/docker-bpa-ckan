@@ -13,7 +13,6 @@ git+git://github.com/muccg/ckanext-scheming.git@interim-1.0.1
 git+git://github.com/muccg/ckan-galleries.git@0.0.2
 git+git://github.com/muccg/ckanext-hierarchy.git@0.0.3
 git+git://github.com/muccg/ckanext-bpatheme.git@0.0.30
-# git+git://github.com/muccg/ckanext-bpatheme.git@master
 git+git://github.com/muccg/ckanext-s3filestore.git@v0.0.4ccg5
 boto3==1.4.0
 botocore==1.4.42
