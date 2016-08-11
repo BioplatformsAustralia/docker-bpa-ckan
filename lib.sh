@@ -135,7 +135,7 @@ _pip_proxy() {
 }
 
 
-_ci_docker_login() {
+ci_docker_login() {
     info 'Docker login'
 
     if [ -z ${DOCKER_USERNAME+x} ]; then
