@@ -5,14 +5,14 @@ ckanapi==3.5
 ckantoolkit==0.0.2
 git+git://github.com/ckan/datapusher.git@0.0.8
 git+git://github.com/ckan/ckanext-pdfview.git@0.0.5
-git+git://github.com/ckan/ckanext-geoview.git@v0.0.10
+git+git://github.com/ckan/ckanext-geoview.git@v0.0.12
 # local forks so we can tag them (no upstream releases)
 git+git://github.com/muccg/ckanext-pages.git@0.0.3
 git+git://github.com/muccg/ckanext-spatial.git@0.0.2
 git+git://github.com/muccg/ckanext-scheming.git@interim-1.0.1
 git+git://github.com/muccg/ckan-galleries.git@0.0.2
 git+git://github.com/muccg/ckanext-hierarchy.git@0.0.3
-git+git://github.com/muccg/ckanext-bpatheme.git@0.0.29
+git+git://github.com/muccg/ckanext-bpatheme.git@0.0.30
 git+git://github.com/muccg/ckanext-s3filestore.git@boto3
 polib==1.0.7
 boto3==1.4.0

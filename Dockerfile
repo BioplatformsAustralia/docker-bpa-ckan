@@ -40,8 +40,7 @@ COPY etc/ckan /etc/ckan/
 COPY etc/uwsgi /etc/uwsgi/
 
 # ckan will pull in pbr. pbr in turn will upgrade pip. this is a preemptive strike
-RUN NO_PROXY=${ARG_PIP_TRUSTED_HOST} pip ${ARG_PIP_OPTS} --trusted-host ${ARG_PIP_TRUSTED_HOST} install -i ${ARG_PIP_INDEX_URL} --upgrade pip==8.1.2
-ENV PYTHON_PIP_VERSION 8.1.2
+RUN NO_PROXY=${ARG_PIP_TRUSTED_HOST} pip ${ARG_PIP_OPTS} --trusted-host ${ARG_PIP_TRUSTED_HOST} install -i ${ARG_PIP_INDEX_URL} --upgrade pip==${PYTHON_PIP_VERSION}
 
 # http://docs.ckan.org/en/latest/maintaining/installing/install-from-source.html
 RUN NO_PROXY=${ARG_PIP_TRUSTED_HOST} pip ${ARG_PIP_OPTS} --trusted-host ${ARG_PIP_TRUSTED_HOST} install -i ${ARG_PIP_INDEX_URL} --upgrade -r /etc/ckan/requirements.txt

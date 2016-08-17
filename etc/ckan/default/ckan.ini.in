@@ -103,7 +103,8 @@ ckan.site_id = default
 #		same origin policy
 ckan.plugins = resource_proxy bpa_theme dfmp geo_view pdf_view scheming_datasets spatial_metadata spatial_query pages stats text_view image_view recline_view datastore hierarchy_display hierarchy_form s3filestore
 
-scheming.dataset_schemas = ckanext.bpatheme:bpa_dataset.json ckanext.bpatheme:camel_photos.json ckanext.bpatheme:wheat_cultivars.json ckanext.bpatheme:wheat_pathogens.json ckanext.bpatheme:great_barrier_reef.json
+scheming.dataset_schemas = ckanext.bpatheme:bpa_dataset.json ckanext.bpatheme:camel_photos.json ckanext.bpatheme:wheat_cultivars.json ckanext.bpatheme:wheat_pathogens.json ckanext.bpatheme:great_barrier_reef_amplicon.json ckanext.bpatheme:great_barrier_reef_metagenomics.json
+
 ckan.spatial.srid = 4326
 # search all types (eg. cultivars, ...)
 ckan.search.show_all_types = true
