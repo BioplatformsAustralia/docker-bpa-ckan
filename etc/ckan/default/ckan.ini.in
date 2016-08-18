@@ -107,6 +107,10 @@ ckan.plugins = resource_proxy bpa_theme dfmp geo_view pdf_view scheming_datasets
 scheming.dataset_schemas = ckanext.bpatheme:bpa_dataset.json ckanext.bpatheme:camel_photos.json ckanext.bpatheme:wheat_cultivars.json ckanext.bpatheme:wheat_pathogens.json ckanext.bpatheme:great_barrier_reef_amplicon.json ckanext.bpatheme:great_barrier_reef_metagenomics.json
 
 ckan.spatial.srid = 4326
+ckanext.spatial.common_map.type = custom
+ckanext.spatial.common_map.custom.url = http://tile.openstreetmap.org/{z}/{x}/{y}.png 
+ckanext.spatial.common_map.attribution = Map tiles & Data by OpenStreetMap, under CC BY SA.
+
 # search all types (eg. cultivars, ...)
 ckan.search.show_all_types = true
 
