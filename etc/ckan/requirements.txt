@@ -3,9 +3,15 @@ ckanserviceprovider==0.0.5
 git+git://github.com/muccg/ckan.git@ckan-2.5.2ccg1
 ckanapi==3.5
 ckantoolkit==0.0.2
+
+# plugins that have github tags are used directly from source
+# plugins that do not bother to have releases are forked to muccg and tagged
+# It may be prudent to fork all dependent plugins to muccg
 git+git://github.com/ckan/datapusher.git@0.0.8
 git+git://github.com/ckan/ckanext-pdfview.git@0.0.5
 git+git://github.com/ckan/ckanext-geoview.git@v0.0.12
+# git+git://github.com/Psykar/ckanext-aaf.git@0.0.6
+
 # local forks so we can tag them (no upstream releases)
 git+git://github.com/muccg/ckanext-pages.git@0.0.3
 git+git://github.com/muccg/ckanext-spatial.git@0.0.2
