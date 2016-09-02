@@ -35,7 +35,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
   && apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 RUN mkdir -p /etc/ckan /var/www/storage && \
-    chown -R www-data:www-data /var/www
+    chown -R ccg-user /var/www
 
 COPY etc/ckan /etc/ckan/
 COPY etc/uwsgi /etc/uwsgi/
@@ -57,7 +57,14 @@ COPY docker-entrypoint.sh /docker-entrypoint.sh
 RUN curl -o /etc/ckan/default/who.ini https://raw.githubusercontent.com/ckan/ckan/ckan-2.5.2/ckan/config/who.ini
 
 EXPOSE 9100 9101
-VOLUME ["/var/www/storage"]
+VOLUME ["/data", "/var/www/storage"]
+
+RUN chown -R ccg-user /etc/ckan/default/
+
+# Drop privileges, set home for ccg-user
+USER ccg-user
+ENV HOME /data
+WORKDIR /data
 
 # entrypoint shell script that by default starts uwsgi
 ENTRYPOINT ["/docker-entrypoint.sh"]
