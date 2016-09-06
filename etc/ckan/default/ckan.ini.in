@@ -194,13 +194,13 @@ ckan.hide_activity_from_users = %(ckan.site_id)s
 
 ## Email settings
 
-#email_to = you@yourdomain.com
-#error_email_from = paste@localhost
-#smtp.server = localhost
-#smtp.starttls = False
-#smtp.user = your_username@gmail.com
-#smtp.password = your_password
-#smtp.mail_from =
+email_to = @EMAIL_TO@
+error_email_from = @EMAIL_FROM@
+smtp.server = @SMTP_SERVER@
+smtp.starttls = True
+smtp.user = @SMTP_USER@
+smtp.password = @SMTP_PASSWORD@
+smtp.mail_from = @SMTP_MAIL_FROM@
 
 ## Prefix middleware config
 # Ideally we wouldn't need this, but currently SCRIPT_NAME env is not being respected
