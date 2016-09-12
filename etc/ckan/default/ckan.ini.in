@@ -208,7 +208,7 @@ filter-with = proxy-prefix
 
 [filter:proxy-prefix]
 use = egg:PasteDeploy#prefix
-prefix = /app
+prefix = @PREFIX@
 
 
 ## Logging configuration
