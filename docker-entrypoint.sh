@@ -125,6 +125,10 @@ if [ "$1" = 'uwsgi' ]; then
     : ${UWSGI_OPTS="/etc/uwsgi/uwsgi.ini"}
     echo "UWSGI_OPTS is ${UWSGI_OPTS}"
 
+    # sync up with the SOLR server after container restart
+    echo "** rebuilding Solr index"
+    paster --plugin=ckan search-index rebuild -c /etc/ckan/default/ckan.ini
+
     exec uwsgi --die-on-term --ini ${UWSGI_OPTS}
 fi
 
