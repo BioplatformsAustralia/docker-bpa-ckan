@@ -1,29 +1,71 @@
 #!groovy
 
 node {
-    env.DOCKER_USE_HUB = 1
-    def deployable_branches = ["master", "next_release"]
+    def deployable_branches = ["master"]
 
-    stage 'Checkout'
+    stage('Checkout') {
         checkout scm
+    }
 
-    stage 'Docker build'
+    dockerStage('Build') {
         echo "Branch is: ${env.BRANCH_NAME}"
         echo "Build is: ${env.BUILD_NUMBER}"
-        wrap([$class: 'AnsiColorBuildWrapper', 'colorMapName': 'XTerm']) {
-            sh './develop.sh build'
-        }
+        sh('''
+            ./develop.sh sanity
+            ./develop.sh recurse build prod
+            ./develop.sh recurse build prod-date
+        ''')
+    }
 
     if (deployable_branches.contains(env.BRANCH_NAME)) {
 
-        stage 'Publish docker image'
+        dockerStage('Publish') {
             withCredentials([[$class: 'UsernamePasswordMultiBinding', credentialsId: 'dockerbot',
                               usernameVariable: 'DOCKER_USERNAME',
                               passwordVariable: 'DOCKER_PASSWORD']]) {
-                wrap([$class: 'AnsiColorBuildWrapper', 'colorMapName': 'XTerm']) {
-                    sh './develop.sh ci_docker_login'
-                    sh './develop.sh publish_docker_image'
+                sh("""
+                    docker login -u "${env.DOCKER_USERNAME}" --password="${env.DOCKER_PASSWORD}"
+                    ./develop.sh recurse push prod
+                    ./develop.sh recurse push prod-date
+                """)
+            }
+        }
+    }
+}
+
+
+/*
+ * dockerStage
+ *
+ * Custom stage that wraps the stage in timestamps and AnsiColorBuildWrapper
+ * Prior to exit wrfy is used to kill all running containers and cleanup.
+ */
+def dockerStage(String label,
+                List<String> artifacts=[],
+                List<String> testResults=[],
+                Closure body) {
+
+    stage(label) {
+        try {
+            timestamps {
+                wrap([$class: 'AnsiColorBuildWrapper', 'colorMapName':    'XTerm']) {
+                    body.call()
                 }
             }
+        } catch (Exception e) {
+            currentBuild.result = 'FAILURE'
+            throw e
+        } finally {
+            for (artifact in artifacts) {
+                step([$class: 'ArtifactArchiver', artifacts: artifact, fingerprint: false, excludes: null])
+            }
+            for (testResult in testResults) {
+                step([$class: 'JUnitResultArchiver', testResults: testResult])
+            }
+            sh('''
+                /env/bin/wrfy kill-all --force
+                /env/bin/wrfy scrub --force
+            ''')
+        }
     }
 }
