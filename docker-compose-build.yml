@@ -8,6 +8,12 @@ services:
         http_proxy:
     image: muccg/${CCG_PROJECT}:${GIT_BRANCH}
 
+  prod:
+    extends:
+      file: docker-compose-build.yml
+      service: dev
+    image: muccg/${CCG_PROJECT}:${GIT_TAG}
+
   latest:
     extends:
       file: docker-compose-build.yml

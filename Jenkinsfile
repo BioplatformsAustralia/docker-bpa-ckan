@@ -12,8 +12,8 @@ node {
         echo "Build is: ${env.BUILD_NUMBER}"
         sh('''
             ./develop.sh sanity
-            ./develop.sh recurse build latest
-            ./develop.sh recurse build latest-date
+            ./develop.sh recurse build prod
+            ./develop.sh recurse build prod-date
         ''')
     }
 
@@ -25,8 +25,8 @@ node {
                               passwordVariable: 'DOCKER_PASSWORD']]) {
                 sh("""
                     docker login -u "${env.DOCKER_USERNAME}" --password="${env.DOCKER_PASSWORD}"
-                    ./develop.sh recurse push latest
-                    ./develop.sh recurse push latest-date
+                    ./develop.sh recurse push prod
+                    ./develop.sh recurse push prod-date
                 """)
             }
         }
