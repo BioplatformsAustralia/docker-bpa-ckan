@@ -14,7 +14,7 @@ git+git://github.com/ckan/ckanext-geoview.git@v0.0.12
 
 # local forks so we can tag them (no upstream releases)
 git+git://github.com/muccg/ckanext-pages.git@0.0.3
-git+git://github.com/muccg/ckanext-spatial.git@0.0.2
+git+git://github.com/muccg/ckanext-spatial.git@0.2.1
 git+git://github.com/muccg/ckanext-scheming.git@interim-1.0.1
 git+git://github.com/muccg/ckan-galleries.git@0.0.2
 git+git://github.com/muccg/ckanext-hierarchy.git@0.0.3

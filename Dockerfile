@@ -1,4 +1,4 @@
-FROM muccg/python-base:debian8-2.7
+FROM muccg/python-base:2.7-debian-8
 MAINTAINER https://github.com/muccg/bpa-ckan-docker
 
 # At build time change these args to use a local devpi mirror
@@ -43,7 +43,7 @@ COPY etc/uwsgi /etc/uwsgi/
 # http://docs.ckan.org/en/latest/maintaining/installing/install-from-source.html
 RUN NO_PROXY=${PIP_TRUSTED_HOST} pip install --upgrade -r /etc/ckan/requirements.txt
 
-RUN curl -o /etc/ckan/ckanext-spatial-requirements.txt https://raw.githubusercontent.com/muccg/ckanext-spatial/0.0.1/pip-requirements.txt \
+RUN curl -o /etc/ckan/ckanext-spatial-requirements.txt https://raw.githubusercontent.com/muccg/ckanext-spatial/0.2.1/pip-requirements.txt \
   && NO_PROXY=${PIP_TRUSTED_HOST} pip install --upgrade -r /etc/ckan/ckanext-spatial-requirements.txt
 
 RUN curl -o /etc/ckan/ckan-requirements.txt https://raw.githubusercontent.com/ckan/ckan/ckan-2.5.2/requirements.txt \
