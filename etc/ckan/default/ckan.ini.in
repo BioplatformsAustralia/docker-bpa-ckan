@@ -202,15 +202,6 @@ smtp.user = @SMTP_USER@
 smtp.password = @SMTP_PASSWORD@
 smtp.mail_from = @SMTP_MAIL_FROM@
 
-## Prefix middleware config
-# Ideally we wouldn't need this, but currently SCRIPT_NAME env is not being respected
-filter-with = proxy-prefix
-
-[filter:proxy-prefix]
-use = egg:PasteDeploy#prefix
-prefix = @PREFIX@
-
-
 ## Logging configuration
 [loggers]
 keys = root, ckan, ckanext
