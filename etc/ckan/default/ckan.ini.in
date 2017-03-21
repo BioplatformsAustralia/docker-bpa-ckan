@@ -62,6 +62,7 @@ ckan.datastore.default_fts_index_method = gist
 ## Site Settings
 
 ckan.site_url =
+ckan.extra_resource_fields = amplicon
 #ckan.use_pylons_response_cleanup_middleware = true
 
 ## Authorization Settings
