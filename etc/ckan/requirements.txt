@@ -18,7 +18,7 @@ git+git://github.com/muccg/ckanext-spatial.git@0.2.1
 git+git://github.com/muccg/ckanext-scheming.git@interim-1.0.1
 git+git://github.com/muccg/ckan-galleries.git@0.0.2
 git+git://github.com/muccg/ckanext-hierarchy.git@0.0.4
-git+git://github.com/muccg/ckanext-bpatheme.git@0.28.2
+git+git://github.com/muccg/ckanext-bpatheme.git@0.29.0
 git+git://github.com/muccg/ckanext-s3filestore.git@boto3
 
 # third party libaries
