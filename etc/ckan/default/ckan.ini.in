@@ -108,7 +108,8 @@ ckan.plugins = resource_proxy bpa_theme geo_view pdf_view scheming_datasets spat
 scheming.dataset_schemas = ckanext.bpatheme:arp_genomics_miseq.json ckanext.bpatheme:arp_genomics_pacbio.json ckanext.bpatheme:arp_metabolomics_lcms.json ckanext.bpatheme:arp_proteomics_ms1quantification.json ckanext.bpatheme:arp_proteomics_swathms.json ckanext.bpatheme:arp_proteomics_swathms_pool.json ckanext.bpatheme:arp_transcriptomics_hiseq.json ckanext.bpatheme:bpa_dataset.json ckanext.bpatheme:great_barrier_reef_amplicon.json ckanext.bpatheme:mm_genomics_amplicon.json ckanext.bpatheme:mm_genomics_amplicon_control.json ckanext.bpatheme:mm_metagenomics.json ckanext.bpatheme:mm_metatranscriptome.json ckanext.bpatheme:stemcells_metabolomic.json ckanext.bpatheme:stemcells_proteomic.json ckanext.bpatheme:stemcells_singlecellrnaseq.json ckanext.bpatheme:stemcells_smallrna.json ckanext.bpatheme:stemcells_transcriptomics.json ckanext.bpatheme:wheat_cultivars.json ckanext.bpatheme:wheat_pathogens.json
 
 ckan.spatial.srid = 4326
-ckanext.spatial.search_backend = solr
+# most of our geometries are points, which don't work with the plain 'solr' backend
+ckanext.spatial.search_backend = solr-spatial-field
 ckanext.spatial.common_map.type = custom
 ckanext.spatial.common_map.custom.url = http://tile.openstreetmap.org/{z}/{x}/{y}.png 
 ckanext.spatial.common_map.attribution = Map tiles & Data by OpenStreetMap, under CC BY SA.

@@ -1,25 +1,24 @@
 ckanserviceprovider==0.0.5
 # the pypy tarball is missing some files, use git instead
-git+git://github.com/muccg/ckan.git@ckan-2.6.1ccg2
+https://github.com/muccg/ckan/archive/ckan-2.6.1ccg3.tar.gz
 ckanapi==3.5
 ckantoolkit==0.0.2
 
 # plugins that have github tags are used directly from source
 # plugins that do not bother to have releases are forked to muccg and tagged
 # It may be prudent to fork all dependent plugins to muccg
-git+git://github.com/ckan/datapusher.git@0.0.8
-git+git://github.com/ckan/ckanext-pdfview.git@0.0.5
-git+git://github.com/ckan/ckanext-geoview.git@v0.0.12
-# git+git://github.com/Psykar/ckanext-aaf.git@0.0.6
+https://github.com/ckan/datapusher/archive/0.0.8.tar.gz
+https://github.com/ckan/ckanext-pdfview/archive/0.0.5.tar.gz
+https://github.com/ckan/ckanext-geoview/archive/v0.0.12.tar.gz
 
 # local forks so we can tag them (no upstream releases)
-git+git://github.com/muccg/ckanext-pages.git@0.0.7
-git+git://github.com/muccg/ckanext-spatial.git@0.2.2
-git+git://github.com/muccg/ckanext-scheming.git@interim-1.0.2
-git+git://github.com/muccg/ckan-galleries.git@0.0.2
-git+git://github.com/muccg/ckanext-hierarchy.git@0.0.4
-git+git://github.com/muccg/ckanext-bpatheme.git@0.31.1
-git+git://github.com/muccg/ckanext-s3filestore.git@boto3
+https://github.com/muccg/ckanext-pages/archive/0.0.7.tar.gz
+https://github.com/muccg/ckanext-spatial/archive/0.2.2.tar.gz
+https://github.com/muccg/ckanext-scheming/archive/interim-1.0.2.tar.gz
+https://github.com/muccg/ckan-galleries/archive/0.0.2.tar.gz
+https://github.com/muccg/ckanext-hierarchy/archive/0.0.4.tar.gz
+https://github.com/muccg/ckanext-bpatheme/archive/0.31.1.tar.gz
+https://github.com/muccg/ckanext-s3filestore/archive/v0.0.4ccg12.tar.gz
 
 # third party libaries
 polib==1.0.7
