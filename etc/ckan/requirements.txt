@@ -17,7 +17,7 @@ https://github.com/muccg/ckanext-spatial/archive/0.2.2.tar.gz
 https://github.com/muccg/ckanext-scheming/archive/interim-1.0.2.tar.gz
 https://github.com/muccg/ckan-galleries/archive/0.0.2.tar.gz
 https://github.com/muccg/ckanext-hierarchy/archive/0.0.4.tar.gz
-https://github.com/muccg/ckanext-bpatheme/archive/0.34.1.tar.gz
+https://github.com/muccg/ckanext-bpatheme/archive/0.35.1.tar.gz
 https://github.com/muccg/ckanext-s3filestore/archive/v0.0.4ccg12.tar.gz
 
 # third party libaries
