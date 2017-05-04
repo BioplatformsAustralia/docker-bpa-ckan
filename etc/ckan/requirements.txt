@@ -13,11 +13,11 @@ https://github.com/ckan/ckanext-geoview/archive/v0.0.12.tar.gz
 
 # local forks so we can tag them (no upstream releases)
 https://github.com/muccg/ckanext-pages/archive/0.0.7.tar.gz
-https://github.com/muccg/ckanext-spatial/archive/0.2.2.tar.gz
+https://github.com/muccg/ckanext-spatial/archive/0.2.3.tar.gz
 https://github.com/muccg/ckanext-scheming/archive/interim-1.0.2.tar.gz
 https://github.com/muccg/ckan-galleries/archive/0.0.2.tar.gz
 https://github.com/muccg/ckanext-hierarchy/archive/0.0.4.tar.gz
-https://github.com/muccg/ckanext-bpatheme/archive/0.35.6.tar.gz
+https://github.com/muccg/ckanext-bpatheme/archive/0.36.0.tar.gz
 https://github.com/muccg/ckanext-s3filestore/archive/v0.0.4ccg12.tar.gz
 
 # third party libaries
