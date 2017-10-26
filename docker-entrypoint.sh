@@ -102,6 +102,7 @@ function make_config {
             -e "s#@SMTP_USER@#$SMTP_USER#" \
             -e "s#@SMTP_PASSWORD@#$SMTP_PASSWORD#" \
             -e "s#@SMTP_MAIL_FROM@#$SMTP_MAIL_FROM#" \
+            -e "s#@CKAN_SITE_URL@#$CKAN_SITE_URL#" \
             -e "s#@SESSION_SECRET@#$SESSION_SECRET#" > /etc/ckan/default/ckan.ini
 }
 
