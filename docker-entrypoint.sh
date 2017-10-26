@@ -71,11 +71,22 @@ function defaults {
     : ${CKAN_STORAGE_PATH:='/var/www/storage/'}
     : ${CKAN_PREFIX:='/app'}
 
+    : ${MAILGUN_API_KEY:="${MAILGUN_API_KEY}"}
+
     export DBSERVER DBPORT DBUSER DBNAME DBPASS MEMCACHE DOCKER_ROUTE
     export DATASTORE_DBSERVER DATASTORE_DBPORT DATASTORE_DBUSER DATASTORE_DBNAME DATASTORE_DBPASS
     export CKAN_INI CKAN_SITE_URL CKAN_SQLALCHEMY_URL CKAN_DATASTORE_WRITE_URL CKAN_DATASTORE_READ_URL CKAN_SOLR_URL CKAN_STORAGE_PATH
     export AWS_ACCESS_KEY_ID AWS_SECRET_ACCESS_KEY AWS_BUCKET_NAME AWS_STORAGE_PATH SESSION_SECRET
     export EMAIL_TO EMAIL_FROM SMTP_SERVER SMTP_USER SMTP_PASSWORD SMTP_MAIL_FROM CKAN_PREFIX
+
+    export MAILGUN_API_KEY
+    export MAILGUN_API_DOMAIN
+    export MAILGUN_SENDER_EMAIL
+    export MAILGUN_RECEIVER_EMAIL
+
+    export REGISTRATION_ERROR_LOG_FILE_PATH
+    export REGISTRATION_ERROR_LOG_FILE_NAME
+
 }
 
 function make_config {
@@ -109,7 +120,7 @@ wait_for_services
 # Accept-Encoding: identity
 # Content-Length: 57
 # Content-Type: application/x-www-form-urlencoded; charset=utf-8
-# 
+#
 # q=%2A%3A%2A&rows=1&fl=%2A%2Cscore&version=2.2&wt=standard
 
 # GET /solr/ckan/admin/file/?file=schema.xml HTTP/1.1
@@ -126,7 +137,7 @@ if [ "$1" = 'uwsgi' ]; then
     echo "UWSGI_OPTS is ${UWSGI_OPTS}"
 
     # due to the huge number of packages, this is too slow to run every startup
-    # 
+    #
     # # sync up with the SOLR server after container restart
     # echo "** rebuilding Solr index"
     # paster --plugin=ckan search-index rebuild -c /etc/ckan/default/ckan.ini
