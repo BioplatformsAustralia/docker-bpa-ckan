@@ -13,6 +13,11 @@ ENV PIP_TRUSTED_HOST $ARG_PIP_TRUSTED_HOST
 ENV PIP_NO_CACHE_DIR "off"
 ENV NO_PROXY ${PIP_TRUSTED_HOST}
 
+# Note: /etc/ckan/requirements.txt also specifies a CKAN version
+ENV CKAN_VERSION 2.6.1
+# Note: (FIXME) /etc/ckan/requirements.txt also specifies a CKANEXT_SPATIAL version (currently 0.2.3)
+ENV CKANEXT_SPATIAL_VERSION 0.2.1
+
 RUN env | sort
 
 RUN apt-get update && apt-get install -y --no-install-recommends \
@@ -44,10 +49,10 @@ COPY etc/uwsgi /etc/uwsgi/
 # http://docs.ckan.org/en/latest/maintaining/installing/install-from-source.html
 RUN pip install --upgrade -r /etc/ckan/requirements.txt
 
-RUN curl -o /etc/ckan/ckanext-spatial-requirements.txt https://raw.githubusercontent.com/muccg/ckanext-spatial/0.2.1/pip-requirements.txt \
+RUN curl -o /etc/ckan/ckanext-spatial-requirements.txt https://raw.githubusercontent.com/muccg/ckanext-spatial/${CKANEXT_SPATIAL_VERSION}/pip-requirements.txt \
   && pip install --upgrade -r /etc/ckan/ckanext-spatial-requirements.txt
 
-RUN curl -o /etc/ckan/ckan-requirements.txt https://raw.githubusercontent.com/ckan/ckan/ckan-2.6.1/requirements.txt \
+RUN curl -o /etc/ckan/ckan-requirements.txt https://raw.githubusercontent.com/ckan/ckan/ckan-${CKAN_VERSION}/requirements.txt \
   && pip install --upgrade -r /etc/ckan/ckan-requirements.txt
 
 # this is a hack: html5lib made a breaking change, and it's broken the whole
@@ -56,8 +61,10 @@ RUN pip install html5lib==0.999
 # same for celery
 RUN pip install celery==3.1.25
 
+RUN pip freeze
+
 COPY docker-entrypoint.sh /docker-entrypoint.sh
-RUN curl -o /etc/ckan/default/who.ini https://raw.githubusercontent.com/ckan/ckan/ckan-2.6.4/ckan/config/who.ini
+RUN curl -o /etc/ckan/default/who.ini https://raw.githubusercontent.com/ckan/ckan/ckan-${CKAN_VERSION}/ckan/config/who.ini
 
 EXPOSE 9100 9101
 VOLUME ["/data", "/var/www/storage"]
