@@ -57,7 +57,7 @@ RUN pip install html5lib==0.999
 RUN pip install celery==3.1.25
 
 COPY docker-entrypoint.sh /docker-entrypoint.sh
-RUN curl -o /etc/ckan/default/who.ini https://raw.githubusercontent.com/ckan/ckan/ckan-2.5.2/ckan/config/who.ini
+RUN curl -o /etc/ckan/default/who.ini https://raw.githubusercontent.com/ckan/ckan/ckan-2.6.4/ckan/config/who.ini
 
 EXPOSE 9100 9101
 VOLUME ["/data", "/var/www/storage"]
