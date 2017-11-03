@@ -1,5 +1,5 @@
 FROM muccg/python-base:2.7-debian-8
-MAINTAINER https://github.com/muccg/bpa-ckan-docker
+LABEL maintainer "https://github.com/muccg/"
 
 # At build time change these args to use a local devpi mirror
 # Unchanged, these defaults allow pip to behave as normal
@@ -11,6 +11,7 @@ ENV CKAN_HOME $VIRTUAL_ENV
 ENV PIP_INDEX_URL $ARG_PIP_INDEX_URL
 ENV PIP_TRUSTED_HOST $ARG_PIP_TRUSTED_HOST
 ENV PIP_NO_CACHE_DIR "off"
+ENV NO_PROXY ${PIP_TRUSTED_HOST}
 
 RUN env | sort
 
@@ -41,19 +42,19 @@ COPY etc/ckan /etc/ckan/
 COPY etc/uwsgi /etc/uwsgi/
 
 # http://docs.ckan.org/en/latest/maintaining/installing/install-from-source.html
-RUN NO_PROXY=${PIP_TRUSTED_HOST} pip install --upgrade -r /etc/ckan/requirements.txt
+RUN pip install --upgrade -r /etc/ckan/requirements.txt
 
 RUN curl -o /etc/ckan/ckanext-spatial-requirements.txt https://raw.githubusercontent.com/muccg/ckanext-spatial/0.2.1/pip-requirements.txt \
-  && NO_PROXY=${PIP_TRUSTED_HOST} pip install --upgrade -r /etc/ckan/ckanext-spatial-requirements.txt
+  && pip install --upgrade -r /etc/ckan/ckanext-spatial-requirements.txt
 
 RUN curl -o /etc/ckan/ckan-requirements.txt https://raw.githubusercontent.com/ckan/ckan/ckan-2.6.1/requirements.txt \
-  && NO_PROXY=${PIP_TRUSTED_HOST} pip install --upgrade -r /etc/ckan/ckan-requirements.txt
+  && pip install --upgrade -r /etc/ckan/ckan-requirements.txt
 
 # this is a hack: html5lib made a breaking change, and it's broken the whole
 # ckan universe. rather than forking everything, hard wire the fix here for now.
-RUN NO_PROXY=${PIP_TRUSTED_HOST} pip install html5lib==0.999
+RUN pip install html5lib==0.999
 # same for celery
-RUN NO_PROXY=${PIP_TRUSTED_HOST} pip install celery==3.1.25
+RUN pip install celery==3.1.25
 
 COPY docker-entrypoint.sh /docker-entrypoint.sh
 RUN curl -o /etc/ckan/default/who.ini https://raw.githubusercontent.com/ckan/ckan/ckan-2.5.2/ckan/config/who.ini
