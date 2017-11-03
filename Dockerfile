@@ -15,8 +15,8 @@ ENV NO_PROXY ${PIP_TRUSTED_HOST}
 
 # Note: /etc/ckan/requirements.txt also specifies a CKAN version
 ENV CKAN_VERSION 2.6.1
-# Note: (FIXME) /etc/ckan/requirements.txt also specifies a CKANEXT_SPATIAL version (currently 0.2.3)
-ENV CKANEXT_SPATIAL_VERSION 0.2.1
+# Note: (FIXME) /etc/ckan/requirements.txt also specifies a CKANEXT_SPATIAL version
+ENV CKANEXT_SPATIAL_VERSION 0.2.3
 
 RUN env | sort
 
