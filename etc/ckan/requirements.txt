@@ -1,6 +1,6 @@
 ckanserviceprovider==0.0.5
 # the pypy tarball is missing some files, use git instead
-https://github.com/muccg/ckan/archive/ckan-2.6.1ccg8.tar.gz
+https://github.com/muccg/ckan/archive/ckan-2.6.1ccg9.tar.gz
 ckanapi==3.5
 ckantoolkit==0.0.2
 
@@ -20,7 +20,7 @@ https://github.com/muccg/ckanext-scheming/archive/interim-1.0.2.tar.gz
 https://github.com/muccg/ckan-galleries/archive/0.0.2.tar.gz
 https://github.com/muccg/ckanext-hierarchy/archive/0.0.4.tar.gz
 https://github.com/muccg/ckanext-s3filestore/archive/v0.0.4ccg14.tar.gz
-https://github.com/muccg/ckanext-bpatheme/archive/0.76.3.tar.gz
+https://github.com/muccg/ckanext-bpatheme/archive/0.76.4.tar.gz
 https://github.com/muccg/ckanext-bulk/archive/1.0.4.tar.gz
 
 # third party libaries
