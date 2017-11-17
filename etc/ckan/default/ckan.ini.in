@@ -37,6 +37,8 @@ ckan.site_intro_text = # Bioplatforms Australia Data Access
 # time it generates a config file.
 beaker.session.secret = @SESSION_SECRET@
 
+googleanalytics.id = @GOOGLE_UA@
+
 # `paster make-config` generates a unique value for this each time it generates
 # a config file.
 app_instance_uuid = 82975c63-bd63-4b23-a301-12e05aa60aea
@@ -104,7 +106,7 @@ ckan.cors.origin_allow_all = True
 #       Add ``datapusher`` to enable DataPusher
 #		Add ``resource_proxy`` to enable resorce proxying and get around the
 #		same origin policy
-ckan.plugins = resource_proxy bpa_theme geo_view pdf_view scheming_datasets spatial_metadata spatial_query pages stats text_view image_view recline_view datastore hierarchy_display hierarchy_form s3filestore bulk
+ckan.plugins = resource_proxy bpa_theme geo_view pdf_view scheming_datasets spatial_metadata spatial_query pages stats text_view image_view recline_view datastore hierarchy_display hierarchy_form s3filestore bulk googleanalytics
 #ckan.plugins = resource_proxy bpa_theme dfmp geo_view pdf_view scheming_datasets spatial_metadata spatial_query pages stats text_view image_view recline_view datastore hierarchy_display hierarchy_form s3filestore aaf
 
 scheming.dataset_schemas = ckanext.bpatheme:arp_genomics_miseq.json ckanext.bpatheme:arp_genomics_pacbio.json ckanext.bpatheme:arp_metabolomics_lcms.json ckanext.bpatheme:arp_metabolomics_gcms.json ckanext.bpatheme:arp_proteomics_ms1quantification.json ckanext.bpatheme:arp_proteomics_swathms.json ckanext.bpatheme:arp_proteomics_swathms_pool.json ckanext.bpatheme:arp_proteomics_swathms_combined_sample.json ckanext.bpatheme:arp_proteomics_2dlibrary.json ckanext.bpatheme:arp_transcriptomics_hiseq.json ckanext.bpatheme:bpa_dataset.json ckanext.bpatheme:great_barrier_reef_amplicon.json ckanext.bpatheme:mm_genomics_amplicon.json ckanext.bpatheme:mm_genomics_amplicon_control.json ckanext.bpatheme:mm_metagenomics.json ckanext.bpatheme:mm_metatranscriptome.json ckanext.bpatheme:stemcells_metabolomic.json ckanext.bpatheme:stemcells_proteomic.json ckanext.bpatheme:stemcells_proteomic_pool.json ckanext.bpatheme:stemcells_singlecellrnaseq.json ckanext.bpatheme:stemcells_smallrna.json ckanext.bpatheme:stemcells_transcriptomics.json ckanext.bpatheme:wheat_cultivars.json ckanext.bpatheme:wheat_pathogens.json ckanext.bpatheme:base_genomics_amplicon.json ckanext.bpatheme:base_genomics_amplicon_control.json ckanext.bpatheme:base_metagenomics.json ckanext.bpatheme:omg_10x_processed_illumina.json ckanext.bpatheme:omg_10x_raw_illumina.json ckanext.bpatheme:omg_10x_raw.json ckanext.bpatheme:stemcells_proteomics_analysed.json ckanext.bpatheme:stemcells_metabolomics_analysed.json ckanext.bpatheme:arp_transcriptomics_analysed.json ckanext.bpatheme:arp_proteomics_analysed.json ckanext.bpatheme:arp_metabolomics_analysed.json ckanext.bpatheme:arp_genomics_analysed.json ckanext.bpatheme:omg_exon_capture.json ckanext.bpatheme:omg_genomics_hiseq.json ckanext.bpatheme:base_site_image.json ckanext.bpatheme:arp_proteomics_database.json
