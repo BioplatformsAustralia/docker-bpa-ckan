@@ -88,6 +88,9 @@ function defaults {
     export REGISTRATION_ERROR_LOG_FILE_PATH
     export REGISTRATION_ERROR_LOG_FILE_NAME
 
+    export CAPTCHA_PUBLIC_KEY
+    export CAPTCHA_PRIVATE_KEY
+
 }
 
 function make_config {
@@ -105,6 +108,8 @@ function make_config {
             -e "s#@SMTP_MAIL_FROM@#$SMTP_MAIL_FROM#" \
             -e "s#@CKAN_SITE_URL@#$CKAN_SITE_URL#" \
             -e "s#@GOOGLE_UA@#$GOOGLE_UA#" \
+            -e "s#@CAPTCHA_PUBLIC_KEY@#$CAPTCHA_PUBLIC_KEY#" \
+            -e "s#@CAPTCHA_PRIVATE_KEY@#$CAPTCHA_PRIVATE_KEY#" \
             -e "s#@SESSION_SECRET@#$SESSION_SECRET#" > /etc/ckan/default/ckan.ini
 }
 
