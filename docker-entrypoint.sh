@@ -91,7 +91,9 @@ function defaults {
     export CAPTCHA_PUBLIC_KEY
     export CAPTCHA_PRIVATE_KEY
 
+    export BPAM_REGISTRATION_LOG_KEY
 }
+
 
 function make_config {
     cat /etc/ckan/default/ckan.ini.in | \
@@ -110,6 +112,7 @@ function make_config {
             -e "s#@GOOGLE_UA@#$GOOGLE_UA#" \
             -e "s#@CAPTCHA_PUBLIC_KEY@#$CAPTCHA_PUBLIC_KEY#" \
             -e "s#@CAPTCHA_PRIVATE_KEY@#$CAPTCHA_PRIVATE_KEY#" \
+            -e "s#@BPAM_REGISTRATION_LOG_KEY@#$BPAM_REGISTRATION_LOG_KEY#" \
             -e "s#@SESSION_SECRET@#$SESSION_SECRET#" > /etc/ckan/default/ckan.ini
 }
 
