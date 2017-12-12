@@ -92,6 +92,7 @@ function defaults {
     export CAPTCHA_PRIVATE_KEY
 
     export BPAM_REGISTRATION_LOG_KEY
+    export BPAM_REGISTRATION_LOG_URL
 }
 
 
@@ -113,6 +114,7 @@ function make_config {
             -e "s#@CAPTCHA_PUBLIC_KEY@#$CAPTCHA_PUBLIC_KEY#" \
             -e "s#@CAPTCHA_PRIVATE_KEY@#$CAPTCHA_PRIVATE_KEY#" \
             -e "s#@BPAM_REGISTRATION_LOG_KEY@#$BPAM_REGISTRATION_LOG_KEY#" \
+            -e "s#@BPAM_REGISTRATION_LOG_URL@#$BPAM_REGISTRATION_LOG_URL#" \
             -e "s#@SESSION_SECRET@#$SESSION_SECRET#" > /etc/ckan/default/ckan.ini
 }
 
