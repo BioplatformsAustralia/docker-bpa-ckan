@@ -1,6 +1,6 @@
 ckanserviceprovider==0.0.5
 # the pypy tarball is missing some files, use git instead
-https://github.com/muccg/ckan/archive/ckan-2.6.5.tar.gz
+https://github.com/muccg/ckan/archive/ckan-2.6.5-ccg.tar.gz
 ckanapi==3.5
 ckantoolkit==0.0.2
 
