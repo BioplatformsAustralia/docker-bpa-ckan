@@ -151,7 +151,7 @@ ckan.display_timezone = server
 ckan.recaptcha.version = 2
 ckan.recaptcha.publickey = @CAPTCHA_PUBLIC_KEY@
 ckan.recaptcha.privatekey = @CAPTCHA_PRIVATE_KEY@
-licenses_group_url = /etc/ckan/license.json
+licenses_group_url = file:///etc/ckan/license.json
 # ckan.template_footer_end =
 
 ckanext.s3filestore.aws_access_key_id = @AWS_ACCESS_KEY_ID@
