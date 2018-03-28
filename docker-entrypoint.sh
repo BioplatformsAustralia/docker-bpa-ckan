@@ -93,6 +93,8 @@ function defaults {
 
     export BPAM_REGISTRATION_LOG_KEY
     export BPAM_REGISTRATION_LOG_URL
+
+    export BPAOTU_AUTH_SECRET_KEY
 }
 
 
