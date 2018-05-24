@@ -20,7 +20,7 @@ https://github.com/BioplatformsAustralia/ckan-galleries/archive/0.0.2.tar.gz
 https://github.com/BioplatformsAustralia/ckanext-hierarchy/archive/0.0.4.tar.gz
 https://github.com/BioplatformsAustralia/ckanext-s3filestore/archive/v0.0.4ccg14.tar.gz
 https://github.com/BioplatformsAustralia/ckanext-bpatheme/archive/0.80.15.tar.gz
-https://github.com/BioplatformsAustralia/ckanext-bulk/archive/1.2.1.tar.gz
+https://github.com/BioplatformsAustralia/ckanext-bulk/archive/1.2.2.tar.gz
 
 # third party libaries
 polib==1.0.7
