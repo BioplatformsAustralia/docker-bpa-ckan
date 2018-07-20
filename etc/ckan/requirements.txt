@@ -26,6 +26,6 @@ https://github.com/BioplatformsAustralia/ckanext-bulk/archive/1.2.2.tar.gz
 polib==1.0.7
 boto3==1.4.7
 botocore==1.7.17
-uWSGI==2.0.13
+uWSGI==2.0.17.1
 uwsgitop
 testrepository
