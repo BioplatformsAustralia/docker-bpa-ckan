@@ -18,11 +18,11 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
   build-essential \
   curl \
   git \
-  libgeos-c1 \
+  libgeos-3.5.1 \
   libjpeg-dev \
   libpcre3 \
   libpcre3-dev \
-  libpng12-dev \
+  libpng-dev \
   libpq5 \
   libpq-dev \
   libssl-dev \
