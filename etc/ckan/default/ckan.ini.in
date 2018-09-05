@@ -67,7 +67,7 @@ ckan.site_url = @CKAN_SITE_URL@
 ckan.extra_resource_fields = amplicon
 #ckan.use_pylons_response_cleanup_middleware = true
 
-search.facets = organization tags res_format
+search.facets = tags res_format
 
 ## Authorization Settings
 
