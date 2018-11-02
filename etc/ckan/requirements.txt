@@ -1,6 +1,6 @@
 ckanserviceprovider==0.0.5
 # the pypy tarball is missing some files, use git instead
-https://github.com/BioplatformsAustralia/ckan/archive/ckan-2.6.6-ccg-10.tar.gz
+https://github.com/BioplatformsAustralia/ckan/archive/ckan-2.6.6-ccg-11.tar.gz
 ckanapi==3.5
 ckantoolkit==0.0.2
 
@@ -19,7 +19,7 @@ https://github.com/BioplatformsAustralia/ckanext-scheming/archive/interim-1.0.2.
 https://github.com/BioplatformsAustralia/ckan-galleries/archive/0.0.2.tar.gz
 https://github.com/BioplatformsAustralia/ckanext-hierarchy/archive/0.0.4.tar.gz
 https://github.com/BioplatformsAustralia/ckanext-s3filestore/archive/v0.0.4ccg14.tar.gz
-https://github.com/BioplatformsAustralia/ckanext-bpatheme/archive/0.84.18.tar.gz
+https://github.com/BioplatformsAustralia/ckanext-bpatheme/archive/0.84.19.tar.gz
 https://github.com/BioplatformsAustralia/ckanext-bulk/archive/1.2.4.tar.gz
 
 # third party libaries
