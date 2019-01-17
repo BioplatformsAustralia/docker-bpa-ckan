@@ -35,7 +35,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
   && apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 RUN mkdir -p /etc/ckan /var/www/storage && \
-    chown -R ccg-user /var/www
+  chown -R ccg-user /var/www
 
 COPY etc/ckan /etc/ckan/
 COPY etc/uwsgi /etc/uwsgi/
@@ -46,17 +46,20 @@ RUN NO_PROXY=${PIP_TRUSTED_HOST} pip install --upgrade -r /etc/ckan/requirements
 RUN curl -o /etc/ckan/ckanext-spatial-requirements.txt https://raw.githubusercontent.com/muccg/ckanext-spatial/0.2.1/pip-requirements.txt \
   && NO_PROXY=${PIP_TRUSTED_HOST} pip install --upgrade -r /etc/ckan/ckanext-spatial-requirements.txt
 
-RUN curl -o /etc/ckan/ckan-requirements.txt https://raw.githubusercontent.com/ckan/ckan/ckan-2.6.1/requirements.txt \
+#RUN curl -o /etc/ckan/ckan-requirements.txt https://raw.githubusercontent.com/ckan/ckan/ckan-2.6.1/requirements.txt \
+RUN curl -o /etc/ckan/ckan-requirements.txt https://raw.githubusercontent.com/ckan/ckan/ckan-2.8.2/requirements.txt \
   && NO_PROXY=${PIP_TRUSTED_HOST} pip install --upgrade -r /etc/ckan/ckan-requirements.txt
 
 # this is a hack: html5lib made a breaking change, and it's broken the whole
 # ckan universe. rather than forking everything, hard wire the fix here for now.
-RUN NO_PROXY=${PIP_TRUSTED_HOST} pip install html5lib==0.999
+#RUN NO_PROXY=${PIP_TRUSTED_HOST} pip install html5lib==0.999
+RUN NO_PROXY=${PIP_TRUSTED_HOST} pip install html5lib==1.0.1
 # same for celery
 RUN NO_PROXY=${PIP_TRUSTED_HOST} pip install celery==3.1.25
 
 COPY docker-entrypoint.sh /docker-entrypoint.sh
-RUN curl -o /etc/ckan/default/who.ini https://raw.githubusercontent.com/ckan/ckan/ckan-2.5.2/ckan/config/who.ini
+#RUN curl -o /etc/ckan/default/who.ini https://raw.githubusercontent.com/ckan/ckan/ckan-2.5.2/ckan/config/who.ini
+RUN curl -o /etc/ckan/default/who.ini https://raw.githubusercontent.com/ckan/ckan/ckan-2.8.2/ckan/config/who.ini
 
 EXPOSE 9100 9101
 VOLUME ["/data", "/var/www/storage"]
