@@ -1,11 +1,12 @@
 #ckanserviceprovider==0.0.5
 ckanserviceprovider==0.0.7
 # the pypy tarball is missing some files, use git instead
-#https://github.com/BioplatformsAustralia/ckan/archive/ckan-2.6.6-ccg-11.tar.gz
-#https://github.com/BioplatformsAustralia/ckan/archive/upgrade_ckan_2.8.2.tar.gz
+# https://github.com/BioplatformsAustralia/ckan/archive/ckan-2.6.6-ccg-11.tar.gz
+# https://github.com/BioplatformsAustralia/ckan/archive/upgrade_ckan_2.8.2.tar.gz
 https://github.com/BioplatformsAustralia/ckan/archive/ckan-2.8-ccg.tar.gz
 ckanapi==3.5
-ckantoolkit==0.0.2
+#ckantoolkit==0.0.2
+ckantoolkit
 
 # plugins that have github tags are used directly from source
 # plugins that do not bother to have releases are forked to BioplatformsAustralia and tagged
@@ -21,13 +22,16 @@ https://github.com/BioplatformsAustralia/ckanext-spatial/archive/0.2.3.tar.gz
 https://github.com/BioplatformsAustralia/ckanext-scheming/archive/interim-1.0.2.tar.gz
 https://github.com/BioplatformsAustralia/ckan-galleries/archive/0.0.2.tar.gz
 https://github.com/BioplatformsAustralia/ckanext-hierarchy/archive/0.0.4.tar.gz
-https://github.com/BioplatformsAustralia/ckanext-s3filestore/archive/v0.0.4ccg14.tar.gz
+#replacing ccg boto3 changes with new version of s3filestorage
+# https://github.com/BioplatformsAustralia/ckanext-s3filestore/archive/v0.0.4ccg14.tar.gz
+https://github.com/okfn/ckanext-s3filestore/archive/v0.1.1.tar.gz
 https://github.com/BioplatformsAustralia/ckanext-bpatheme/archive/0.86.1.tar.gz
 https://github.com/BioplatformsAustralia/ckanext-bulk/archive/1.2.6.tar.gz
 
 # third party libaries
 polib==1.0.7
-boto3==1.4.7
+#boto3==1.4.7
+boto3>=1.4.4
 botocore==1.7.17
 uWSGI==2.0.17.1
 uwsgitop

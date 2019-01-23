@@ -30,14 +30,10 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
   libxml2 \
   libxml2-dev \
   libxslt1-dev \
-  # libmagic-mgc \
   libmagic1 \
-  # libmagic-dev \
   python-pil \
   zlib1g-dev \
   && apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
-
-#RUN apt-get update && apt-get install libmagic-dev
 
 RUN mkdir -p /etc/ckan /var/www/storage && \
   chown -R ccg-user /var/www
@@ -54,13 +50,6 @@ RUN curl -o /etc/ckan/ckanext-spatial-requirements.txt https://raw.githubusercon
 #RUN curl -o /etc/ckan/ckan-requirements.txt https://raw.githubusercontent.com/ckan/ckan/ckan-2.6.1/requirements.txt \
 RUN curl -o /etc/ckan/ckan-requirements.txt https://raw.githubusercontent.com/ckan/ckan/ckan-2.8.2/requirements.txt \
   && NO_PROXY=${PIP_TRUSTED_HOST} pip install --upgrade -r /etc/ckan/ckan-requirements.txt
-
-# USER root
-# RUN apt-get update && apt-get install -y --no-install-recommends \
-#   apt-utils \
-#   libmagic1 \
-#   && rm -rf /var/lib/apt/lists/*
-# RUN python -c "import magic"
 
 # this is a hack: html5lib made a breaking change, and it's broken the whole
 # ckan universe. rather than forking everything, hard wire the fix here for now.
