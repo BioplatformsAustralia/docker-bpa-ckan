@@ -160,9 +160,9 @@ ckanext.s3filestore.aws_bucket_name = @AWS_BUCKET_NAME@
 ckanext.s3filestore.aws_storage_path = @AWS_STORAGE_PATH@
 ckanext.s3filestore.filesystem_download_fallback = false
 
-ckanext.s3filestore.host_name = @HOST_NAME_TO_S3@
-ckanext.s3filestore.region_name = @AWS_REGION_NAME@
-ckanext.s3filestore.signature_version = @AWS_SIGNATURE_VERSION@
+ckanext.s3filestore.host_name = @AWS_HOST_NAME_TO_S3@
+ckanext.s3filestore.region_name = @REGION_NAME@
+ckanext.s3filestore.signature_version = @SIGNATURE_VERSION@
 
 ## Internationalisation Settings
 ckan.locale_default = en
