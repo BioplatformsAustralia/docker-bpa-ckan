@@ -25,7 +25,15 @@ https://github.com/BioplatformsAustralia/ckanext-hierarchy/archive/0.0.4.tar.gz
 #replacing ccg boto3 changes with new version of s3filestorage
 # https://github.com/BioplatformsAustralia/ckanext-s3filestore/archive/v0.0.4ccg14.tar.gz
 https://github.com/okfn/ckanext-s3filestore/archive/v0.1.1.tar.gz
-https://github.com/BioplatformsAustralia/ckanext-bpatheme/archive/0.86.1.tar.gz
+#upgrading theme
+#https://github.com/BioplatformsAustralia/ckanext-bpatheme/archive/0.86.1.tar.gz
+#https://github.com/BioplatformsAustralia/ckanext-bpatheme/archive/ckan-upgrade-2.8.2.tar.gz
+#https://github.com/datawagovau/ckanext-datawagovautheme/archive/v0.1.2.tar.gz
+#https://github.com/datawagovau/ckanext-datawagovautheme/archive/2.0.2.tar.gz
+# https://github.com/BioplatformsAustralia/ckanext-datawagovautheme/archive/package_setup_changes.tar.gz
+
+#file:///home/kpatel/ccg_projects/BioplatformsAustralia/ckanext-datawagovautheme/dist/ckanext-datawagovautheme-2.0.2.tar.gz
+
 https://github.com/BioplatformsAustralia/ckanext-bulk/archive/1.2.6.tar.gz
 
 # third party libaries
@@ -36,3 +44,4 @@ botocore==1.7.17
 uWSGI==2.0.17.1
 uwsgitop
 testrepository
+flask-debugtoolbar
