@@ -1,7 +1,7 @@
 #ckanserviceprovider==0.0.5
 ckanserviceprovider==0.0.7
 # the pypy tarball is missing some files, use git instead
-# https://github.com/BioplatformsAustralia/ckan/archive/ckan-2.6.6-ccg-11.tar.gz
+ #https://github.com/BioplatformsAustralia/ckan/archive/ckan-2.6.6-ccg-11.tar.gz
 # https://github.com/BioplatformsAustralia/ckan/archive/upgrade_ckan_2.8.2.tar.gz
 https://github.com/BioplatformsAustralia/ckan/archive/ckan-2.8-ccg.tar.gz
 #https://github.com/ckan/ckan/archive/ckan-2.8.2.tar.gz
@@ -15,18 +15,24 @@ ckantoolkit
 https://github.com/ckan/datapusher/archive/0.0.8.tar.gz
 https://github.com/ckan/ckanext-pdfview/archive/0.0.5.tar.gz
 https://github.com/ckan/ckanext-geoview/archive/v0.0.12.tar.gz
+#added showcase extension
+https://github.com/ckan/ckanext-showcase/archive/v1.1.0.tar.gz
 
 # local forks so we can tag them (no upstream releases)
 https://github.com/BioplatformsAustralia/ckanext-googleanalytics/archive/v2.0.0ccg2.tar.gz
 https://github.com/BioplatformsAustralia/ckanext-pages/archive/0.0.7.tar.gz
 https://github.com/BioplatformsAustralia/ckanext-spatial/archive/0.2.3.tar.gz
-https://github.com/BioplatformsAustralia/ckanext-scheming/archive/interim-1.0.2.tar.gz
-https://github.com/BioplatformsAustralia/ckan-galleries/archive/0.0.2.tar.gz
-https://github.com/BioplatformsAustralia/ckanext-hierarchy/archive/0.0.4.tar.gz
 
-#replacing ccg boto3 changes with new version of s3filestorage
-# https://github.com/BioplatformsAustralia/ckanext-s3filestore/archive/v0.0.4ccg14.tar.gz
-https://github.com/okfn/ckanext-s3filestore/archive/v0.1.1.tar.gz
+#https://github.com/BioplatformsAustralia/ckanext-scheming/archive/interim-1.0.2.tar.gz
+https://github.com/ckan/ckanext-scheming/archive/master.tar.gz
+
+https://github.com/BioplatformsAustralia/ckan-galleries/archive/0.0.2.tar.gz
+
+#https://github.com/BioplatformsAustralia/ckanext-hierarchy/archive/0.0.4.tar.gz
+https://github.com/datagovuk/ckanext-hierarchy/archive/master.tar.gz
+
+#fix s3filestorage for ckan 2.8.2
+#https://github.com/BioplatformsAustralia/ckanext-s3filestore/archive/v0.0.4ccg14.tar.gz
 
 #upgrading theme
 #https://github.com/BioplatformsAustralia/ckanext-bpatheme/archive/0.86.1.tar.gz
