@@ -65,6 +65,8 @@ RUN curl -o /etc/ckan/default/who.ini https://raw.githubusercontent.com/ckan/cka
 EXPOSE 9100 9101
 VOLUME ["/data", "/var/www/storage"]
 
+# CKAN needs to be able to write translations in here
+RUN chown -R ccg-user /env/lib/python2.7/site-packages/ckan/public/base/i18n/
 RUN chown -R ccg-user /etc/ckan/default/
 
 # Drop privileges, set home for ccg-user
