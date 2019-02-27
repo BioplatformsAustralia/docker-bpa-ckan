@@ -23,8 +23,8 @@ https://github.com/BioplatformsAustralia/ckanext-googleanalytics/archive/v2.0.0c
 https://github.com/BioplatformsAustralia/ckanext-pages/archive/0.0.7.tar.gz
 https://github.com/BioplatformsAustralia/ckanext-spatial/archive/0.2.3.tar.gz
 
-#https://github.com/BioplatformsAustralia/ckanext-scheming/archive/interim-1.0.2.tar.gz
-https://github.com/ckan/ckanext-scheming/archive/master.tar.gz
+https://github.com/BioplatformsAustralia/ckanext-scheming/archive/interim-1.0.2.tar.gz
+#https://github.com/ckan/ckanext-scheming/archive/master.tar.gz
 
 https://github.com/BioplatformsAustralia/ckan-galleries/archive/0.0.2.tar.gz
 
