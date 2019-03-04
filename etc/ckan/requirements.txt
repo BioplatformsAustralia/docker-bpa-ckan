@@ -15,7 +15,7 @@ ckantoolkit
 https://github.com/ckan/datapusher/archive/0.0.8.tar.gz
 https://github.com/ckan/ckanext-pdfview/archive/0.0.5.tar.gz
 https://github.com/ckan/ckanext-geoview/archive/v0.0.12.tar.gz
-#added showcase extension
+#added showcase extension (we are not using it but will think about using it in future)
 https://github.com/ckan/ckanext-showcase/archive/v1.1.0.tar.gz
 
 # local forks so we can tag them (no upstream releases)
@@ -39,7 +39,8 @@ https://github.com/datagovuk/ckanext-hierarchy/archive/master.tar.gz
 #https://github.com/BioplatformsAustralia/ckanext-bpatheme/archive/ckan-upgrade-2.8.2.tar.gz
 #https://github.com/datawagovau/ckanext-datawagovautheme/archive/2.0.2.tar.gz
 #https://github.com/BioplatformsAustralia/ckanext-datawagovautheme/archive/ccg-fixes.tar.gz
-https://github.com/BioplatformsAustralia/ckanext-datawagovautheme/archive/bpa-theme.tar.gz 
+#https://github.com/BioplatformsAustralia/ckanext-datawagovautheme/archive/bpa-theme.tar.gz 
+https://github.com/BioplatformsAustralia/ckanext-datawagovautheme/archive/bpatheme.tar.gz 
 
 https://github.com/BioplatformsAustralia/ckanext-bulk/archive/1.2.6.tar.gz
 
