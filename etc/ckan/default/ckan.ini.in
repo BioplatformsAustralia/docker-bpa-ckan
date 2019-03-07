@@ -113,7 +113,7 @@ ckan.cors.origin_allow_all = True
 
 #trying datawagovau theme
 #removed s3filestore and added showcase
-ckan.plugins = resource_proxy datawagovau_theme geo_view pdf_view scheming_datasets spatial_metadata spatial_query pages stats text_view image_view recline_view datastore hierarchy_display hierarchy_form bulk googleanalytics showcase
+ckan.plugins = resource_proxy datawagovau_theme geo_view pdf_view scheming_datasets spatial_metadata spatial_query pages stats text_view image_view recline_view datastore hierarchy_display hierarchy_form bulk googleanalytics 
 #ckan.plugins = stats text_view image_view recline_view
 #ckan.plugins = resource_proxy datawagovau_theme geo_view pdf_view scheming_datasets spatial_metadata spatial_query stats text_view image_view recline_view datastore hierarchy_display hierarchy_form s3filestore bulk googleanalytics
 #ckan.plugins = resource_proxy geo_view pdf_view scheming_datasets spatial_metadata spatial_query pages stats text_view image_view recline_view datastore hierarchy_display hierarchy_form s3filestore bulk googleanalytics
