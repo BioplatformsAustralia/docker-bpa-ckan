@@ -3,7 +3,7 @@ ckanserviceprovider==0.0.7
 # the pypy tarball is missing some files, use git instead
  #https://github.com/BioplatformsAustralia/ckan/archive/ckan-2.6.6-ccg-12.tar.gz
 # https://github.com/BioplatformsAustralia/ckan/archive/upgrade_ckan_2.8.2.tar.gz
-https://github.com/BioplatformsAustralia/ckan/archive/ckan-2.8.2-ccg-10.tar.gz
+https://github.com/BioplatformsAustralia/ckan/archive/ckan-2.8.2-ccg-11.tar.gz
 #https://github.com/ckan/ckan/archive/ckan-2.8.2.tar.gz
 
 ckanapi==3.5
