@@ -33,6 +33,7 @@ https://github.com/BioplatformsAustralia/ckanext-hierarchy/archive/0.0.5.tar.gz
 
 #fix s3filestorage for ckan 2.8.2
 #https://github.com/BioplatformsAustralia/ckanext-s3filestore/archive/v0.0.4ccg14.tar.gz
+https://github.com/BioplatformsAustralia/ckanext-s3filestore/archive/pastefileapp-to-s3fileapp.tar.gz
 
 #upgrading theme
 https://github.com/BioplatformsAustralia/ckanext-datawagovautheme/archive/v0.1.2ccg3.tar.gz 
@@ -42,8 +43,8 @@ https://github.com/BioplatformsAustralia/ckanext-bulk/archive/1.2.8.tar.gz
 
 # third party libaries
 polib==1.0.7
-#boto3==1.4.7
-boto3>=1.4.4
+boto3==1.4.7
+#boto3>=1.4.4
 botocore==1.7.17
 uWSGI==2.0.17.1
 uwsgitop
