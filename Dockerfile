@@ -57,6 +57,9 @@ RUN NO_PROXY=${PIP_TRUSTED_HOST} pip install html5lib==1.0.1
 
 # same for celery
 RUN NO_PROXY=${PIP_TRUSTED_HOST} pip install celery==3.1.25
+#
+# same for psycopg2
+RUN NO_PROXY=${PIP_TRUSTED_HOST} pip install psycopg2==2.8.2
 
 COPY docker-entrypoint.sh /docker-entrypoint.sh
 #RUN curl -o /etc/ckan/default/who.ini https://raw.githubusercontent.com/ckan/ckan/ckan-2.5.2/ckan/config/who.ini

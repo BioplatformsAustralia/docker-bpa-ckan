@@ -1,14 +1,10 @@
-#ckanserviceprovider==0.0.5
 ckanserviceprovider==0.0.7
 # the pypy tarball is missing some files, use git instead
- #https://github.com/BioplatformsAustralia/ckan/archive/ckan-2.6.6-ccg-12.tar.gz
-# https://github.com/BioplatformsAustralia/ckan/archive/upgrade_ckan_2.8.2.tar.gz
 https://github.com/BioplatformsAustralia/ckan/archive/ckan-2.8.2-ccg-13.tar.gz
 #https://github.com/ckan/ckan/archive/ckan-2.8.2.tar.gz
 
 # think about upgrading ckanapi to 4.1
 ckanapi==3.5
-#ckantoolkit==0.0.2
 ckantoolkit
 
 # plugins that have github tags are used directly from source
@@ -54,4 +50,3 @@ botocore
 uWSGI==2.0.17.1
 uwsgitop
 testrepository
-#flask-debugtoolbar
