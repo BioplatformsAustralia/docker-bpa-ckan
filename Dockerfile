@@ -27,7 +27,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
   build-essential \
   curl \
   git \
-  libgeos-3.5.1 \
+  libgeos-3.7.1 \
   libjpeg-dev \
   libpcre3 \
   libpcre3-dev \
