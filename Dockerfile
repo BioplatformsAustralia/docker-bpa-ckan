@@ -1,16 +1,25 @@
-FROM muccg/python-base:2.7-debian-8
-MAINTAINER https://github.com/muccg/bpa-ckan-docker
+FROM python:2.7-slim
+LABEL maintainer "https://github.com/BioplatformsAustralia"
 
-# At build time change these args to use a local devpi mirror
-# Unchanged, these defaults allow pip to behave as normal
-ARG ARG_PIP_INDEX_URL="https://pypi.python.org/simple"
-ARG ARG_PIP_TRUSTED_HOST="127.0.0.1"
+ENV VIRTUAL_ENV /env
+ENV PYTHON_PIP_VERSION 9.0.1
+ENV PIP_NO_CACHE_DIR="off"
 
+# create a virtual env in $VIRTUAL_ENV and ensure it respects pip version
+RUN pip install --upgrade virtualenv \
+    && virtualenv $VIRTUAL_ENV \
+    && $VIRTUAL_ENV/bin/pip install --upgrade pip==$PYTHON_PIP_VERSION
+ENV PATH $VIRTUAL_ENV/bin:$PATH
 ENV PROJECT_NAME ckan
 ENV CKAN_HOME $VIRTUAL_ENV
-ENV PIP_INDEX_URL $ARG_PIP_INDEX_URL
-ENV PIP_TRUSTED_HOST $ARG_PIP_TRUSTED_HOST
 ENV PIP_NO_CACHE_DIR "off"
+
+RUN mkdir /app
+
+RUN addgroup --gid 1000 bioplatforms \
+  && adduser --disabled-password --home /data --no-create-home --system -q --uid 1000 --ingroup bioplatforms bioplatforms \
+  && mkdir /data \
+  && chown bioplatforms:bioplatforms /data
 
 RUN env | sort
 
@@ -35,7 +44,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
   && apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 RUN mkdir -p /etc/ckan /var/www/storage && \
-    chown -R ccg-user /var/www
+    chown -R bioplatforms /var/www
 
 COPY etc/ckan /etc/ckan/
 COPY etc/uwsgi /etc/uwsgi/
@@ -43,7 +52,7 @@ COPY etc/uwsgi /etc/uwsgi/
 # http://docs.ckan.org/en/latest/maintaining/installing/install-from-source.html
 RUN NO_PROXY=${PIP_TRUSTED_HOST} pip install --upgrade -r /etc/ckan/requirements.txt
 
-RUN curl -o /etc/ckan/ckanext-spatial-requirements.txt https://raw.githubusercontent.com/muccg/ckanext-spatial/0.2.1/pip-requirements.txt \
+RUN curl -o /etc/ckan/ckanext-spatial-requirements.txt https://raw.githubusercontent.com/BioplatformsAustralia/ckanext-spatial/0.2.1/pip-requirements.txt \
   && NO_PROXY=${PIP_TRUSTED_HOST} pip install --upgrade -r /etc/ckan/ckanext-spatial-requirements.txt
 
 RUN curl -o /etc/ckan/ckan-requirements.txt https://raw.githubusercontent.com/ckan/ckan/ckan-2.6.1/requirements.txt \
@@ -64,10 +73,10 @@ RUN curl -o /etc/ckan/default/who.ini https://raw.githubusercontent.com/ckan/cka
 EXPOSE 9100 9101
 VOLUME ["/data", "/var/www/storage"]
 
-RUN chown -R ccg-user /etc/ckan/default/
+RUN chown -R bioplatforms /etc/ckan/default/
 
-# Drop privileges, set home for ccg-user
-USER ccg-user
+# Drop privileges, set home for bioplatforms
+USER bioplatforms
 ENV HOME /data
 WORKDIR /data
 
