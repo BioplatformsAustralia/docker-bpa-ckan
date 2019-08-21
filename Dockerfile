@@ -55,7 +55,7 @@ RUN NO_PROXY=${PIP_TRUSTED_HOST} pip install --upgrade -r /etc/ckan/requirements
 RUN curl -o /etc/ckan/ckanext-spatial-requirements.txt https://raw.githubusercontent.com/BioplatformsAustralia/ckanext-spatial/0.2.1/pip-requirements.txt \
   && NO_PROXY=${PIP_TRUSTED_HOST} pip install --upgrade -r /etc/ckan/ckanext-spatial-requirements.txt
 
-RUN curl -o /etc/ckan/ckan-requirements.txt https://raw.githubusercontent.com/ckan/ckan/ckan-2.8.3/requirements.txt \
+RUN curl -o /etc/ckan/ckan-requirements.txt https://raw.githubusercontent.com/BioplatformsAustralia/ckan/ckan-2.6-ccg/requirements.txt \
   && NO_PROXY=${PIP_TRUSTED_HOST} pip install --upgrade -r /etc/ckan/ckan-requirements.txt
 
 # this is a hack: html5lib made a breaking change, and it's broken the whole
