@@ -18,7 +18,7 @@ https://github.com/BioplatformsAustralia/ckanext-hierarchy/archive/0.0.5.tar.gz
 https://github.com/BioplatformsAustralia/ckanext-s3filestore/archive/stream-upload.tar.gz
 
 # bootstrap 3 version of the theme; developed on branch ckan-2.8
-https://github.com/BioplatformsAustralia/ckanext-bpatheme/archive/1.0.0beta2.tar.gz
+https://github.com/BioplatformsAustralia/ckanext-bpatheme/archive/1.0.0beta3.tar.gz
 
 # developed by Bioplatforms/CCG/QCIF
 https://github.com/BioplatformsAustralia/ckanext-bulk/archive/1.2.8.tar.gz
@@ -30,3 +30,4 @@ botocore==1.7.17
 uWSGI==2.0.17.1
 uwsgitop
 testrepository
+flask-babel==0.12.2

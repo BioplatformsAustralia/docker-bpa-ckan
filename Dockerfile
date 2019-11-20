@@ -10,6 +10,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
   build-essential \
   curl \
   git \
+  libmagic1 \
   libgeos-3.7.1 \
   libjpeg-dev \
   libpcre3 \
@@ -58,16 +59,13 @@ ENV PIP_NO_CACHE_DIR "off"
 RUN cat /etc/ckan/requirements/bioplatforms-requirements.txt
 RUN pip install --upgrade -r /etc/ckan/requirements/bioplatforms-requirements.txt
 
-RUN curl -o /etc/ckan/requirements/ckanext-spatial-requirements.txt https://raw.githubusercontent.com/BioplatformsAustralia/ckanext-spatial/0.2.1/pip-requirements.txt \
+RUN curl -o /etc/ckan/requirements/ckanext-spatial-requirements.txt https://raw.githubusercontent.com/BioplatformsAustralia/ckanext-spatial/0.2.4/pip-requirements.txt \
   && pip install --upgrade -r /etc/ckan/requirements/ckanext-spatial-requirements.txt
 
-RUN curl -o /etc/ckan/requirements/ckan-requirements.txt https://raw.githubusercontent.com/BioplatformsAustralia/ckan/ckan-2.6-ccg/requirements.txt \
+RUN curl -o /etc/ckan/requirements/ckan-requirements.txt https://raw.githubusercontent.com/BioplatformsAustralia/ckan/bioplatforms-2.8/requirements.txt \
   && pip install --upgrade -r /etc/ckan/requirements/ckan-requirements.txt
 
-# this is a hack: html5lib made a breaking change, and it's broken the whole
-# ckan universe. rather than forking everything, hard wire the fix here for now.
-RUN pip install html5lib==0.999
-# same for celery
+# pin celery version
 RUN pip install celery==3.1.25
 # https://github.com/geoalchemy/geoalchemy2/issues/213
 RUN pip install GeoAlchemy2==0.5.0
