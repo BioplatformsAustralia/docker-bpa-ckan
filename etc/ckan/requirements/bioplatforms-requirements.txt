@@ -1,26 +1,27 @@
-ckanserviceprovider==0.0.5
-# the pypy tarball is missing some files, use git instead
-https://github.com/BioplatformsAustralia/ckan/archive/2.6.8-bioplatforms1.tar.gz
-ckanapi==3.5
-ckantoolkit==0.0.2
+ckanserviceprovider==0.0.7
+https://github.com/BioplatformsAustralia/ckan/archive/2.8.3-bioplatforms1.tar.gz
 
-# plugins that have github tags are used directly from source
-# plugins that do not bother to have releases are forked to BioplatformsAustralia and tagged
-# It may be prudent to fork all dependent plugins to BioplatformsAustralia
+ckanapi==4.1
+ckantoolkit
+
 https://github.com/ckan/datapusher/archive/0.0.8.tar.gz
 https://github.com/ckan/ckanext-pdfview/archive/0.0.5.tar.gz
 https://github.com/ckan/ckanext-geoview/archive/v0.0.12.tar.gz
 
 # local forks so we can tag them (no upstream releases)
-https://github.com/BioplatformsAustralia/ckanext-googleanalytics/archive/v2.0.0ccg2.tar.gz
-https://github.com/BioplatformsAustralia/ckanext-pages/archive/0.10.0.tar.gz
-https://github.com/BioplatformsAustralia/ckanext-spatial/archive/0.2.3.tar.gz
-https://github.com/BioplatformsAustralia/ckanext-scheming/archive/interim-1.0.2.tar.gz
+https://github.com/BioplatformsAustralia/ckanext-googleanalytics/archive/v2.0.2ccg1.tar.gz
+https://github.com/BioplatformsAustralia/ckanext-pages/archive/0.0.8.tar.gz
+https://github.com/BioplatformsAustralia/ckanext-spatial/archive/0.2.4.tar.gz
+https://github.com/BioplatformsAustralia/ckanext-scheming/archive/interim-1.0.3.tar.gz
 https://github.com/BioplatformsAustralia/ckan-galleries/archive/0.0.2.tar.gz
-https://github.com/BioplatformsAustralia/ckanext-hierarchy/archive/0.0.4.tar.gz
-https://github.com/BioplatformsAustralia/ckanext-s3filestore/archive/v0.0.4ccg14.tar.gz
-https://github.com/BioplatformsAustralia/ckanext-bpatheme/archive/0.94.1.tar.gz
-https://github.com/BioplatformsAustralia/ckanext-bulk/archive/1.2.7-v2.6.tar.gz
+https://github.com/BioplatformsAustralia/ckanext-hierarchy/archive/0.0.5.tar.gz
+https://github.com/BioplatformsAustralia/ckanext-s3filestore/archive/stream-upload.tar.gz
+
+# bootstrap 3 version of the theme
+https://github.com/BioplatformsAustralia/ckanext-datawagovautheme/archive/v0.1.2ccg3.tar.gz 
+
+# developed by Bioplatforms/CCG/QCIF
+https://github.com/BioplatformsAustralia/ckanext-bulk/archive/1.2.8.tar.gz
 
 # third party libaries
 polib==1.0.7
@@ -29,4 +30,3 @@ botocore==1.7.17
 uWSGI==2.0.17.1
 uwsgitop
 testrepository
-
