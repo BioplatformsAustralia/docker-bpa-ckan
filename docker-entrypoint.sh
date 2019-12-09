@@ -67,7 +67,7 @@ function defaults {
     : ${CKAN_DATASTORE_WRITE_URL="postgres://${DATASTORE_DBUSER}:${DATASTORE_DBPASS}@${DATASTORE_DBSERVER}/${DATASTORE_DBNAME}"}
     : ${CKAN_DATASTORE_READ_URL="postgres://${DATASTORE_DB_READONLY_USER}:${DATASTORE_DB_READONLY_PASS}@${DATASTORE_DBSERVER}/${DATASTORE_DBNAME}"}
     : ${CKAN_SOLR_URL="http://solr:8983/solr/ckan"}
-    : ${CKAN_SITE_URL:="https://localhost:8443/app/"}
+    : ${CKAN_SITE_URL:="https://localhost:8443/"}
     : ${GOOGLE_UA:="UA-UNSET"}
     : ${CKAN_STORAGE_PATH:='/var/www/storage/'}
     : ${CKAN_PREFIX:='/app'}
