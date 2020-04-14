@@ -71,6 +71,8 @@ function defaults {
     : ${GOOGLE_UA:="UA-UNSET"}
     : ${CKAN_STORAGE_PATH:='/var/www/storage/'}
     : ${CKAN_PREFIX:='/app'}
+    : ${UWSGI_PROCESSES:='16'}
+    : ${UWSGI_THREADS:='2'}
 
     : ${MAILGUN_API_KEY:="${MAILGUN_API_KEY}"}
 
@@ -79,6 +81,7 @@ function defaults {
     export CKAN_INI CKAN_SITE_URL CKAN_SQLALCHEMY_URL CKAN_DATASTORE_WRITE_URL CKAN_DATASTORE_READ_URL GOOGLE_UA CKAN_SOLR_URL CKAN_STORAGE_PATH
     export AWS_ACCESS_KEY_ID AWS_HOST_NAME_TO_S3 AWS_REGION_NAME AWS_SECRET_ACCESS_KEY AWS_BUCKET_NAME AWS_STORAGE_PATH SESSION_SECRET
     export EMAIL_TO EMAIL_FROM SMTP_SERVER SMTP_USER SMTP_PASSWORD SMTP_MAIL_FROM CKAN_PREFIX
+    export UWSGI_PROCESSES UWSGI_THREADS
 
     export MAILGUN_API_KEY
     export MAILGUN_API_DOMAIN
@@ -121,6 +124,11 @@ function make_config {
             -e "s#@BPAM_REGISTRATION_LOG_URL@#$BPAM_REGISTRATION_LOG_URL#" \
             -e "s#@BPAOTU_AUTH_SECRET_KEY@#$BPAOTU_AUTH_SECRET_KEY#" \
             -e "s#@SESSION_SECRET@#$SESSION_SECRET#" > /etc/ckan/default/ckan.ini
+    cat /etc/uwsgi/vassals/socket-9100.ini.in |
+        sed \
+            -e "s#@UWSGI_THREADS@#$UWSGI_THREADS#" \
+	    -e "s#@UWSGI_PROCESSES@#$UWSGI_PROCESSES#" > /etc/uwsgi/vassals/socket-9100.ini &&
+	rm /etc/uwsgi/vassals/socket-9100.ini.in
 }
 
 

@@ -20,7 +20,7 @@ chdir          = /etc/ckan
 paste          = config:/etc/ckan/default/ckan.ini
 touch-reload   = /etc/uwsgi/vassals/%n.ini
 
-processes      = 16
-threads        = 2
+processes      = @UWSGI_PROCESSES@
+threads        = @UWSGI_THREADS@
 master         = True
 vacuum         = True

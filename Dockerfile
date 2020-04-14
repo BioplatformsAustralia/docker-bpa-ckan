@@ -35,7 +35,7 @@ COPY etc/uwsgi /etc/uwsgi/
 
 RUN mkdir /app /env
 RUN chown bioplatforms /app /env
-RUN chown -R bioplatforms /etc/ckan/default/ /etc/ckan/requirements/
+RUN chown -R bioplatforms /etc/ckan/default/ /etc/ckan/requirements/ /etc/uwsgi/
 
 RUN pip install --upgrade virtualenv pip
 
