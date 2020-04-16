@@ -102,33 +102,31 @@ function defaults {
 
 
 function make_config {
-    cat /etc/ckan/default/ckan.ini.in | \
-        sed -e "s#@AWS_ACCESS_KEY_ID@#$AWS_ACCESS_KEY_ID#" \
-            -e "s#@AWS_SECRET_ACCESS_KEY@#$AWS_SECRET_ACCESS_KEY#" \
-            -e "s#@AWS_BUCKET_NAME@#$AWS_BUCKET_NAME#" \
-            -e "s#@AWS_REGION_NAME@#$AWS_REGION_NAME#" \
-            -e "s#@AWS_STORAGE_PATH@#$AWS_STORAGE_PATH#" \
-            -e "s#@AWS_HOST_NAME_TO_S3@#$AWS_HOST_NAME_TO_S3#" \
-            -e "s#@EMAIL_TO@#$EMAIL_TO#" \
-            -e "s#@EMAIL_FROM@#$EMAIL_FROM#" \
-            -e "s#@PREFIX@#$CKAN_PREFIX#" \
-            -e "s#@SMTP_SERVER@#$SMTP_SERVER#" \
-            -e "s#@SMTP_USER@#$SMTP_USER#" \
-            -e "s#@SMTP_PASSWORD@#$SMTP_PASSWORD#" \
-            -e "s#@SMTP_MAIL_FROM@#$SMTP_MAIL_FROM#" \
-            -e "s#@CKAN_SITE_URL@#$CKAN_SITE_URL#" \
-            -e "s#@GOOGLE_UA@#$GOOGLE_UA#" \
-            -e "s#@CAPTCHA_PUBLIC_KEY@#$CAPTCHA_PUBLIC_KEY#" \
-            -e "s#@CAPTCHA_PRIVATE_KEY@#$CAPTCHA_PRIVATE_KEY#" \
-            -e "s#@BPAM_REGISTRATION_LOG_KEY@#$BPAM_REGISTRATION_LOG_KEY#" \
-            -e "s#@BPAM_REGISTRATION_LOG_URL@#$BPAM_REGISTRATION_LOG_URL#" \
-            -e "s#@BPAOTU_AUTH_SECRET_KEY@#$BPAOTU_AUTH_SECRET_KEY#" \
-            -e "s#@SESSION_SECRET@#$SESSION_SECRET#" > /etc/ckan/default/ckan.ini
-    cat /etc/uwsgi/vassals/socket-9100.ini.in |
-        sed \
-            -e "s#@UWSGI_THREADS@#$UWSGI_THREADS#" \
-	    -e "s#@UWSGI_PROCESSES@#$UWSGI_PROCESSES#" > /etc/uwsgi/vassals/socket-9100.ini &&
-	rm /etc/uwsgi/vassals/socket-9100.ini.in
+    sed -i \
+	-e "s#@AWS_ACCESS_KEY_ID@#$AWS_ACCESS_KEY_ID#" \
+        -e "s#@AWS_SECRET_ACCESS_KEY@#$AWS_SECRET_ACCESS_KEY#" \
+        -e "s#@AWS_BUCKET_NAME@#$AWS_BUCKET_NAME#" \
+        -e "s#@AWS_REGION_NAME@#$AWS_REGION_NAME#" \
+        -e "s#@AWS_STORAGE_PATH@#$AWS_STORAGE_PATH#" \
+        -e "s#@AWS_HOST_NAME_TO_S3@#$AWS_HOST_NAME_TO_S3#" \
+        -e "s#@EMAIL_TO@#$EMAIL_TO#" \
+        -e "s#@EMAIL_FROM@#$EMAIL_FROM#" \
+        -e "s#@PREFIX@#$CKAN_PREFIX#" \
+        -e "s#@SMTP_SERVER@#$SMTP_SERVER#" \
+        -e "s#@SMTP_USER@#$SMTP_USER#" \
+        -e "s#@SMTP_PASSWORD@#$SMTP_PASSWORD#" \
+        -e "s#@SMTP_MAIL_FROM@#$SMTP_MAIL_FROM#" \
+        -e "s#@CKAN_SITE_URL@#$CKAN_SITE_URL#" \
+        -e "s#@GOOGLE_UA@#$GOOGLE_UA#" \
+        -e "s#@CAPTCHA_PUBLIC_KEY@#$CAPTCHA_PUBLIC_KEY#" \
+        -e "s#@CAPTCHA_PRIVATE_KEY@#$CAPTCHA_PRIVATE_KEY#" \
+        -e "s#@BPAM_REGISTRATION_LOG_KEY@#$BPAM_REGISTRATION_LOG_KEY#" \
+        -e "s#@BPAM_REGISTRATION_LOG_URL@#$BPAM_REGISTRATION_LOG_URL#" \
+        -e "s#@BPAOTU_AUTH_SECRET_KEY@#$BPAOTU_AUTH_SECRET_KEY#" \
+        -e "s#@SESSION_SECRET@#$SESSION_SECRET#" /etc/ckan/default/ckan.ini
+    sed -i \
+        -e "s#@UWSGI_THREADS@#$UWSGI_THREADS#" \
+        -e "s#@UWSGI_PROCESSES@#$UWSGI_PROCESSES#" /etc/uwsgi/vassals/socket-9100.ini
 }
 
 
