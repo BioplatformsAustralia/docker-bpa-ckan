@@ -54,6 +54,7 @@ ENV PATH $VIRTUAL_ENV/bin:$PATH
 ENV PROJECT_NAME ckan
 ENV CKAN_HOME $VIRTUAL_ENV
 ENV PIP_NO_CACHE_DIR "off"
+ENV PYTHONUNBUFFERED 1
 
 # http://docs.ckan.org/en/latest/maintaining/installing/install-from-source.html
 RUN cat /etc/ckan/requirements/bioplatforms-requirements.txt
