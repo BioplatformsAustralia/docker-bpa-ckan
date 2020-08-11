@@ -10,12 +10,12 @@ script:
 - chmod 755 ~/.docker
 - chmod 644 ~/.docker/config.json
 - export "GIT_BRANCH=$TRAVIS_BRANCH"
-- test x"$TRAVIS_PULL_REQUEST_BRANCH" != x"" && export "GIT_BRANCH=$TRAVIS_PULL_REQUEST_BRANCH" || echo "This build is not a PR."
+- test x"$TRAVIS_PULL_REQUEST_BRANCH" != x"" && export "GIT_BRANCH=$TRAVIS_PULL_REQUEST_BRANCH"
+  || echo "This build is not a PR."
 - export "BRANCH_NAME=$GIT_BRANCH"
-- ./travis-build.sh
-- ./travis-prodbuild.sh
-
+- "./travis-build.sh"
+- "./travis-prodbuild.sh"
 env:
   global:
-    - DOCKER_USERNAME: devredbox
-    - secure: hnUxSpouKMp8qrBKmUT1eib54XE/61QYf3F8cx/rcFwGRyrhUrmzabYvAbbvxFu+AADZ7FXQl7D3Yri5PElXWazRCf2cNg8PJ17oYn92bUY3xZjr+OeWBo/Oy9gaI7aKwx3DzZ5FoG6P0RujRDrfOYSjxRFmjBnUhya06ODCsUPXramjuUInKfcVlW5Ysrki9foFauPctVZ+Y+WenMnkgPJpubIU84LNXguhb1OIDKq8FyEjjEKIBWEAS4Z7Xj9egvMoKOdTddeMUl3uGOQds6qLGdnFUJxLlCGuaYrIxi4vwd12Ho/px7dotB8t4K15dIecz+XPrdG0f0LEdiRzmoepqWNVeu88B3A0hmL17wk/TmjAWrpnEjMCHU84yUnPPgzaVyN9NFhqYQUTFgCg1yk4mjxBSy5G1klir/8uggjFRUNYvdv3/v/3PAum3dvpX09GXy9FsL7rHJhyU/pWAyE3Y9x9m5e8KT+TI8i/gqvKBWwmNsKLG/WNeSlyDzc+WdZnjsuKWr5ECPcIO0dHf/vo4/KGwku9cMxh3GGZSlCDnUdKoaUYlT3f/8DcG/NwK1ajz87/Wra05D++sK2gAL7/hQVko/6fZIMQhBI8bjMIItcbW4BcARlOS2SrG1TwCq39ee1aLl6iVEqTQDc8gVmIpzDWa8JhFiibMuWiKGE=
+  - DOCKER_USERNAME: devredbox
+  - secure: jzYxmuLbQ42U3pkfwWAilUrISNR0Me2g3DpgNkR0o7sp40A/hjHaJ/Pbc4Du2HmMuX7wHOSmxl8VaneqKr+H+HO0gUA7aEmXs5EKMS4ht1zshWQWZq3edHEiLtZOrMg124cisxNp1AJMpbr9E5lSklne9Q0hQ0LoFCSZ8Y4BajTddA5iaS0+vWNn65wumVW87oNpS/o5rAHGefrSIqGTp9bboKTFLJ4aj35HW4kbOI0ABgyS/kjfx+2hOPysr/qth8DCrk5UasBiTGc/zgdr26wuz6YZqnp9yfBN4GM2NYPleJUd95tSF2m6VM1vEkoO8ZMSVuhsdDgh0XcI052lmY93ku3JnCBMjTDw6lSAe/2HVm5VmvhOKIy0W0Y22n0WbVeSAJG7yhwp7OhgZeihG+BYKgveEsmtH5O2Xx7kQxYVuavAsWP3kgiMLJIDu7SvmGfS9nirDP8q5emminJytWxEVQi/i2ieOOnr6oChBKtAizoJ78WML82sHFSCJU42fgQP/SNIulI1YTK0s/9eiX6ikL7ofbeNKS7psLsi1fud4zby2g3XJGG+6bI6xenwd/swMmwjnCqftKAj4/Wlomk52kv037lPMMbxKwCBqrLD79VGFOqyCLcSQvnmO16WKrCxfUTHnDxh6rmrrAZO7jYnxsz/U1lAFtOrXtn1wMA=
