@@ -20,7 +20,6 @@ https://github.com/BioplatformsAustralia/ckanext-s3filestore/archive/stream-uplo
 # developed by Bioplatforms/CCG/QCIF
 https://github.com/BioplatformsAustralia/ckanext-bpatheme/archive/2.0.21.tar.gz
 https://github.com/BioplatformsAustralia/ckanext-bulk/archive/1.2.11.tar.gz
-https://github.com/BioplatformsAustralia/ckanext-initiatives/archive/0.0.4.tar.gz
 
 # third party libaries
 polib==1.0.7
