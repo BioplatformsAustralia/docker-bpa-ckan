@@ -3,7 +3,7 @@ https://github.com/BioplatformsAustralia/ckan/archive/2.8.3-bioplatforms3.tar.gz
 
 ckanapi==4.1
 ckantoolkit
- 
+
 https://github.com/ckan/datapusher/archive/0.0.8.tar.gz
 https://github.com/ckan/ckanext-pdfview/archive/0.0.5.tar.gz
 https://github.com/ckan/ckanext-geoview/archive/v0.0.12.tar.gz
