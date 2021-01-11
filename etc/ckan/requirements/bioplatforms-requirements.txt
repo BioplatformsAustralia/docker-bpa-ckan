@@ -31,3 +31,5 @@ uwsgitop
 testrepository
 flask-babel==0.12.2
 pandas==0.24.2
+# without specifying this dateutil may not be updated for pandas
+python-dateutil==2.8.1
