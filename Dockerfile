@@ -25,7 +25,6 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
   libxslt1-dev \
   python-pil \
   zlib1g-dev \
-  iproute2 \
   && apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 RUN mkdir -p /etc/ckan /var/www/storage && \
