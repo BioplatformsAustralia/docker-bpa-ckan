@@ -26,6 +26,7 @@ workflows:
   build-deploy:
     jobs:
       - build:
+          context: Bioplatforms
           filters:
             branches:
               only: master
