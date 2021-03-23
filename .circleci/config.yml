@@ -16,7 +16,7 @@ jobs:
           echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
           chmod 755 ~/.docker
           chmod 644 ~/.docker/config.json
-          export "GIT_REPO_NAME=docker-bpa-ckan"
+          export "DOCKER_NAME=bpa-ckan"
           export "GIT_TAG=$CIRCLE_TAG"
           "./circleci-prodbuild.sh"
 workflows:
