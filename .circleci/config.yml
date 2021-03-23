@@ -6,8 +6,11 @@ jobs:
   build:
     docker:
       - image: 'cimg/base:stable'
+    machine:
+      docker_layer_caching: true
     steps:
       - checkout
+      - docker/install-docker-compose
       - run: |
           docker pull bioplatformsaustralia/bioplatforms-composer
           echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
