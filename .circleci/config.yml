@@ -8,9 +8,7 @@ jobs:
       - image: 'cimg/base:stable'
     steps:
       - checkout
-      - setup_remote_docker:
-          docker_layer_caching: true
-      - docker/install-docker-compose
+      - setup_remote_docker
       - run: |
           docker pull bioplatformsaustralia/bioplatforms-composer
           echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
