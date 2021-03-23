@@ -9,6 +9,9 @@ jobs:
     steps:
       - checkout
       - setup_remote_docker
+      - attach_workspace:
+          at: /home/circleci/project
+      - docker/install-docker-compose
       - run: |
           docker pull bioplatformsaustralia/bioplatforms-composer
           sudo apt-get -y update && sudo apt-get install -y iproute2
