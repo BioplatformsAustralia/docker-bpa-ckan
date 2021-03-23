@@ -11,6 +11,7 @@ jobs:
       - setup_remote_docker
       - run: |
           docker pull bioplatformsaustralia/bioplatforms-composer
+          apt-get install -y iproute2
           echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
           chmod 755 ~/.docker
           chmod 644 ~/.docker/config.json
@@ -19,7 +20,7 @@ jobs:
             export "GIT_BRANCH=$TRAVIS_PULL_REQUEST_BRANCH" || echo "This build is not a PR."
           export "BRANCH_NAME=$GIT_BRANCH"
           "./travis-build.sh"
-          "./travis-prodbuild.sh"
+          "./circleci-prodbuild.sh"
 workflows:
   version: 2
   build-deploy:
