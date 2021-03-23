@@ -11,7 +11,7 @@ jobs:
       - setup_remote_docker
       - run: |
           docker pull bioplatformsaustralia/bioplatforms-composer
-          sudo apt-get update -y && apt-get install -y iproute2
+          sudo apt-get -y update && sudo apt-get install -y iproute2
           echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
           chmod 755 ~/.docker
           chmod 644 ~/.docker/config.json
