@@ -162,7 +162,7 @@ if [ "$1" = 'uwsgi' ]; then
 
     if [ x"$LOCAL_DEV" = x"yes" ]; then
       # install local copies of various modules
-      for mod in ckan ckanext-bulk ckanext-bpatheme ckanext-s3filestore ckanext-scheming ckanext-spatial ckanext-initiatives; do
+      for mod in ckan ckanext-bulk ckanext-bpatheme ckanext-s3filestore ckanext-scheming ckanext-spatial ckanext-initiatives ckanext-bpatogalaxy; do
           cd /app/"$mod" && pip install -U -e .
       done
       exec uwsgi --die-on-term --ini ${UWSGI_OPTS} --py-autoreload 1

@@ -74,6 +74,7 @@ RUN pip install GeoAlchemy2==0.5.0
 COPY docker-entrypoint.sh /docker-entrypoint.sh
 RUN curl -o /etc/ckan/default/who.ini https://raw.githubusercontent.com/ckan/ckan/ckan-2.5.2/ckan/config/who.ini
 RUN pip install -U --no-binary :all: psycopg2
+RUN pip install bioblend
 
 EXPOSE 9100 9101
 VOLUME ["/data", "/var/www/storage"]
