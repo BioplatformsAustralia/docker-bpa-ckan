@@ -66,6 +66,9 @@ RUN curl -o /etc/ckan/requirements/ckanext-spatial-requirements.txt https://raw.
 RUN curl -o /etc/ckan/requirements/ckan-requirements.txt https://raw.githubusercontent.com/BioplatformsAustralia/ckan/bioplatforms-2.8/requirements.txt \
   && pip install --upgrade -r /etc/ckan/requirements/ckan-requirements.txt
 
+RUN cat /etc/ckan/requirements/bioplatforms-post-ckan-requirements.txt
+RUN pip install --upgrade -r /etc/ckan/requirements/bioplatforms-post-ckan-requirements.txt
+
 # pin celery version
 RUN pip install celery==3.1.25
 # https://github.com/geoalchemy/geoalchemy2/issues/213
