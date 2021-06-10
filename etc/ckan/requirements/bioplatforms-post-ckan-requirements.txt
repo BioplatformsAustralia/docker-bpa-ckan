@@ -2,4 +2,4 @@
 # This extra file is for problems arising when ckan-requirements adds an earlier version into library - installing after will uninstall the older version
 # without specifying this dateutil may not be updated for pandas
 python-dateutil==2.8.1
-Jinja2==2.9
+Jinja2==2.11.3
