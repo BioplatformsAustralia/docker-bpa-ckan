@@ -18,7 +18,7 @@ https://github.com/BioplatformsAustralia/ckanext-hierarchy/archive/0.0.5.tar.gz
 https://github.com/BioplatformsAustralia/ckanext-s3filestore/archive/s3_window.tar.gz
 
 # developed by Bioplatforms/CCG/QCIF
-https://github.com/BioplatformsAustralia/ckanext-bpatheme/archive/s3_window.tar.gz
+https://github.com/BioplatformsAustralia/ckanext-bpatheme/archive/s3_window_staging.tar.gz
 https://github.com/BioplatformsAustralia/ckanext-bulk/archive/1.3.7.tar.gz
 https://github.com/BioplatformsAustralia/ckanext-initiatives/archive/s3_window.tar.gz
 
