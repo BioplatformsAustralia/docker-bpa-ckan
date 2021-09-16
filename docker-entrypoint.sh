@@ -98,6 +98,10 @@ function defaults {
     export BPAM_REGISTRATION_LOG_URL
 
     export BPAOTU_AUTH_SECRET_KEY
+    
+    export GALAXY_HOST
+    export GALAXY_API_KEY
+    export GALAXY_TEST_FILE
 }
 
 
@@ -126,6 +130,9 @@ function make_config {
         -e "s#@BPAM_REGISTRATION_LOG_KEY@#$BPAM_REGISTRATION_LOG_KEY#" \
         -e "s#@BPAM_REGISTRATION_LOG_URL@#$BPAM_REGISTRATION_LOG_URL#" \
         -e "s#@BPAOTU_AUTH_SECRET_KEY@#$BPAOTU_AUTH_SECRET_KEY#" \
+        -e "s#@GALAXY_HOST@#$GALAXY_HOST#" \
+        -e "s#@GALAXY_API_KEY@#$GALAXY_API_KEY#" \
+        -e "s#@GALAXY_TEST_FILE@#$GALAXY_TEST_FILE#" \
         -e "s#@SESSION_SECRET@#$SESSION_SECRET#" /etc/ckan/default/ckan.ini
     sed -i \
         -e "s#@UWSGI_THREADS@#$UWSGI_THREADS#" \
@@ -165,7 +172,7 @@ if [ "$1" = 'uwsgi' ]; then
 
     if [ x"$LOCAL_DEV" = x"yes" ]; then
       # install local copies of various modules
-      for mod in ckan ckanext-bulk ckanext-bpatheme ckanext-s3filestore ckanext-scheming ckanext-spatial ckanext-initiatives; do
+      for mod in ckan ckanext-bulk ckanext-bpatheme ckanext-s3filestore ckanext-scheming ckanext-spatial ckanext-initiatives ckanext-bpatogalaxy; do
           cd /app/"$mod" && pip install -U -e .
       done
       exec uwsgi --die-on-term --ini ${UWSGI_OPTS} --py-autoreload 1
