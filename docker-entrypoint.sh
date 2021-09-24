@@ -101,7 +101,6 @@ function defaults {
     
     export GALAXY_HOST
     export GALAXY_API_KEY
-    export GALAXY_TEST_FILE
 }
 
 
@@ -132,7 +131,6 @@ function make_config {
         -e "s#@BPAOTU_AUTH_SECRET_KEY@#$BPAOTU_AUTH_SECRET_KEY#" \
         -e "s#@GALAXY_HOST@#$GALAXY_HOST#" \
         -e "s#@GALAXY_API_KEY@#$GALAXY_API_KEY#" \
-        -e "s#@GALAXY_TEST_FILE@#$GALAXY_TEST_FILE#" \
         -e "s#@SESSION_SECRET@#$SESSION_SECRET#" /etc/ckan/default/ckan.ini
     sed -i \
         -e "s#@UWSGI_THREADS@#$UWSGI_THREADS#" \
