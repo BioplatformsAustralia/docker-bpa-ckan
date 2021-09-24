@@ -74,8 +74,8 @@ RUN pip install celery==3.1.25
 # https://github.com/geoalchemy/geoalchemy2/issues/213
 RUN pip install GeoAlchemy2==0.5.0
 
-# RUN pip install bioblend==0.13.0 
-RUN pip install git+https://github.com/qfab-bioinformatics/bioblend.git@feature-bpatogalaxy-13
+# Bioblend 0.13.0 is the latest version that suports python 2.7
+RUN pip install bioblend==0.13.0 
 
 COPY docker-entrypoint.sh /docker-entrypoint.sh
 RUN curl -o /etc/ckan/default/who.ini https://raw.githubusercontent.com/ckan/ckan/ckan-2.5.2/ckan/config/who.ini
