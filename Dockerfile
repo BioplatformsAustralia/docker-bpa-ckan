@@ -11,7 +11,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
   curl \
   git \
   libmagic1 \
-  libgeos-3.7.1 \
+  libgeos-3.9.0 \
   libjpeg-dev \
   libpcre3 \
   libpcre3-dev \
