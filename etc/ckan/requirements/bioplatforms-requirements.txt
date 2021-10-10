@@ -16,7 +16,7 @@ https://github.com/BioplatformsAustralia/ckanext-scheming/archive/interim-1.0.3.
 https://github.com/BioplatformsAustralia/ckan-galleries/archive/0.0.2.tar.gz
 https://github.com/BioplatformsAustralia/ckanext-hierarchy/archive/0.0.5.tar.gz
 https://github.com/BioplatformsAustralia/ckanext-s3filestore/archive/1.0.0-bioplatforms3.tar.gz
-https://github.com/BioplatformsAustralia/ckanext-ytp-request/archive/1.0.0-bioplatforms5.tar.gz
+https://github.com/BioplatformsAustralia/ckanext-ytp-request/archive/1.0.0-bioplatforms6.tar.gz
 
 # developed by Bioplatforms/CCG/QCIF
 https://github.com/BioplatformsAustralia/ckanext-bpatheme/archive/3.1.35.tar.gz
