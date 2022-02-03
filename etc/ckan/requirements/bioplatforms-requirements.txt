@@ -12,7 +12,7 @@ https://github.com/ckan/ckanext-geoview/archive/v0.0.12.tar.gz
 https://github.com/BioplatformsAustralia/ckanext-googleanalytics/archive/v2.0.2ccg1.tar.gz
 https://github.com/BioplatformsAustralia/ckanext-pages/archive/0.0.8.tar.gz
 https://github.com/BioplatformsAustralia/ckanext-spatial/archive/0.2.4.tar.gz
-https://github.com/BioplatformsAustralia/ckanext-scheming/archive/interim-1.0.3.tar.gz
+https://github.com/BioplatformsAustralia/ckanext-scheming/archive/interim-1.0.4.tar.gz
 https://github.com/BioplatformsAustralia/ckan-galleries/archive/0.0.2.tar.gz
 https://github.com/BioplatformsAustralia/ckanext-hierarchy/archive/0.0.5.tar.gz
 https://github.com/BioplatformsAustralia/ckanext-s3filestore/archive/1.0.0-bioplatforms3.tar.gz
@@ -32,3 +32,5 @@ uwsgitop
 testrepository
 flask-babel==0.12.2
 pandas==0.24.2
+
+Flask-DebugToolbar==0.10.1
