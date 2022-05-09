@@ -32,5 +32,6 @@ uwsgitop
 testrepository
 flask-babel==0.12.2
 pandas==0.24.2
+bitmath
 
 Flask-DebugToolbar==0.10.1
