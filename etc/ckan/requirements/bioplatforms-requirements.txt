@@ -34,5 +34,7 @@ testrepository
 flask-babel==0.12.2
 pandas==0.24.2
 bitmath
+# for Python 2 to 3 migration
+six
 
 Flask-DebugToolbar==0.10.1
