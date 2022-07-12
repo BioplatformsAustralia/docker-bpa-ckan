@@ -45,7 +45,7 @@ ENV HOME /data
 WORKDIR /data
 
 ENV VIRTUAL_ENV /env
-ENV PYTHON_PIP_VERSION 9.0.1
+ENV PYTHON_PIP_VERSION 22.1.2
 ENV PIP_NO_CACHE_DIR="off"
 
 # create a virtual env in $VIRTUAL_ENV and ensure it respects pip version
