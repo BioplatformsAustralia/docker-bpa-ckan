@@ -1,4 +1,4 @@
-FROM python:2.7-slim
+FROM python:3.9-slim
 LABEL maintainer "https://github.com/BioplatformsAustralia"
 
 RUN addgroup --gid 1000 bioplatforms \
