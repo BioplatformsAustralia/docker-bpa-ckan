@@ -60,22 +60,21 @@ ENV PYTHONUNBUFFERED 1
 RUN cat /etc/ckan/requirements/bioplatforms-requirements.txt
 RUN pip install --upgrade -r /etc/ckan/requirements/bioplatforms-requirements.txt
 
-RUN curl -o /etc/ckan/requirements/ckanext-spatial-requirements.txt https://raw.githubusercontent.com/BioplatformsAustralia/ckanext-spatial/0.2.4/pip-requirements.txt \
+RUN curl -o /etc/ckan/requirements/ckanext-spatial-requirements.txt https://raw.githubusercontent.com/BioplatformsAustralia/ckanext-spatial/v1.0.0bioplatforms1/requirements.txt \
   && pip install --upgrade -r /etc/ckan/requirements/ckanext-spatial-requirements.txt
 
-RUN curl -o /etc/ckan/requirements/ckan-requirements.txt https://raw.githubusercontent.com/BioplatformsAustralia/ckan/bioplatforms-2.8/requirements.txt \
+RUN curl -o /etc/ckan/requirements/ckan-requirements.txt https://raw.githubusercontent.com/BioplatformsAustralia/ckan/bioplatforms-2.9/requirements.txt \
   && pip install --upgrade -r /etc/ckan/requirements/ckan-requirements.txt
 
 RUN cat /etc/ckan/requirements/bioplatforms-post-ckan-requirements.txt
 RUN pip install --upgrade -r /etc/ckan/requirements/bioplatforms-post-ckan-requirements.txt
 
 # pin celery version
-RUN pip install celery==3.1.25
-# https://github.com/geoalchemy/geoalchemy2/issues/213
-RUN pip install GeoAlchemy2==0.5.0
+RUN pip install celery==5.2.7
+RUN pip install GeoAlchemy2==0.12.1
 
 COPY docker-entrypoint.sh /docker-entrypoint.sh
-RUN curl -o /etc/ckan/default/who.ini https://raw.githubusercontent.com/ckan/ckan/ckan-2.5.2/ckan/config/who.ini
+RUN curl -o /etc/ckan/default/who.ini https://raw.githubusercontent.com/ckan/ckan/ckan-2.9.5/ckan/config/who.ini
 RUN pip install -U --no-binary :all: psycopg2
 
 EXPOSE 9100 9101
