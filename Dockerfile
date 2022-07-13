@@ -25,6 +25,8 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
   libxslt1-dev \
   python3-pil \
   zlib1g-dev \
+  proj-bin \
+  libproj-dev \
   && apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 RUN mkdir -p /etc/ckan /var/www/storage && \
