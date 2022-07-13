@@ -1,5 +1,5 @@
 ckanserviceprovider==0.0.11
-https://github.com/BioplatformsAustralia/ckan/archive/2.8.3-bioplatforms9.tar.gz
+https://github.com/BioplatformsAustralia/ckan/archive/2.9.5-bioplatforms3.tar.gz
 
 ckanapi==4.7
 ckantoolkit
@@ -18,7 +18,7 @@ https://github.com/BioplatformsAustralia/ckanext-s3filestore/archive/1.0.0-biopl
 https://github.com/BioplatformsAustralia/ckanext-ytp-request/archive/1.0.0-bioplatforms10.tar.gz
 
 # developed by Bioplatforms/CCG/QCIF
-https://github.com/BioplatformsAustralia/ckanext-bpatheme/archive/3.3.0.tar.gz
+https://github.com/BioplatformsAustralia/ckanext-bpatheme/archive/3.4.1.tar.gz
 https://github.com/BioplatformsAustralia/ckanext-bpaschema/archive/4.0.1.tar.gz
 https://github.com/BioplatformsAustralia/ckanext-bulk/archive/1.3.12.tar.gz
 https://github.com/BioplatformsAustralia/ckanext-initiatives/archive/1.1.0.tar.gz
