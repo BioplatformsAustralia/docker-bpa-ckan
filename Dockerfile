@@ -73,10 +73,11 @@ RUN pip install --upgrade -r /etc/ckan/requirements/bioplatforms-post-ckan-requi
 
 # pin celery version
 RUN pip install celery==5.2.7
-RUN pip install GeoAlchemy2==0.12.1
+RUN pip install GeoAlchemy2==0.11.1
 
 COPY docker-entrypoint.sh /docker-entrypoint.sh
 RUN curl -o /etc/ckan/default/who.ini https://raw.githubusercontent.com/ckan/ckan/ckan-2.9.5/ckan/config/who.ini
+RUN curl -o /etc/ckan/default/wsgi.py https://raw.githubusercontent.com/ckan/ckan/ckan-2.9.5/wsgi.py
 RUN pip install -U --no-binary :all: psycopg2
 
 EXPOSE 9100 9101
