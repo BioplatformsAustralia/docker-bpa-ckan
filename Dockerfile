@@ -59,11 +59,17 @@ ENV PIP_NO_CACHE_DIR "off"
 ENV PYTHONUNBUFFERED 1
 
 # http://docs.ckan.org/en/latest/maintaining/installing/install-from-source.html
-RUN cat /etc/ckan/requirements/bioplatforms-requirements.txt
-RUN pip install --upgrade -r /etc/ckan/requirements/bioplatforms-requirements.txt
+RUN cat /etc/ckan/requirements/bioplatforms-requirements.txt \
+  && pip install --upgrade -r /etc/ckan/requirements/bioplatforms-requirements.txt
 
 RUN curl -o /etc/ckan/requirements/ckanext-spatial-requirements.txt https://raw.githubusercontent.com/BioplatformsAustralia/ckanext-spatial/v1.0.0bioplatforms1/requirements.txt \
   && pip install --upgrade -r /etc/ckan/requirements/ckanext-spatial-requirements.txt
+
+RUN curl -o /etc/ckan/requirements/ckanext-harvest-requirements.txt https://raw.githubusercontent.com/ckan/ckanext-harvest/v1.4.0/pip-requirements.txt \
+  && pip install --upgrade -r /etc/ckan/requirements/ckanext-harvest-requirements.txt
+
+RUN curl -o /etc/ckan/requirements/ckanext-googleanalytics-requirements.txt https://raw.githubusercontent.com/BioplatformsAustralia/ckanext-googleanalytics/v2.0.7bioplatforms1/requirements.txt \
+  && pip install --upgrade -r /etc/ckan/requirements/ckanext-googleanalytics-requirements.txt
 
 RUN curl -o /etc/ckan/requirements/ckan-requirements.txt https://raw.githubusercontent.com/BioplatformsAustralia/ckan/bioplatforms-2.9/requirements.txt \
   && pip install --upgrade -r /etc/ckan/requirements/ckan-requirements.txt
