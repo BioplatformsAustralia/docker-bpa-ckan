@@ -70,6 +70,7 @@ function defaults {
     : ${CKAN_SITE_URL:="https://localhost:8443/"}
     : ${GOOGLE_UA:="UA-UNSET"}
     : ${CKAN_STORAGE_PATH:='/var/www/storage/'}
+    : ${S3FILESTORE_CHECK_ACCESS_ON_STARTUP:="true"}
     : ${CKAN_PREFIX:='/app'}
     : ${UWSGI_PROCESSES:='16'}
     : ${UWSGI_THREADS:='2'}
@@ -83,6 +84,7 @@ function defaults {
     export SESSION_SECRET APITOKEN_SECRET
     export EMAIL_TO EMAIL_FROM SMTP_SERVER SMTP_USER SMTP_PASSWORD SMTP_MAIL_FROM CKAN_PREFIX
     export UWSGI_PROCESSES UWSGI_THREADS
+    export S3FILESTORE_CHECK_ACCESS_ON_STARTUP
 
     export MAILGUN_API_KEY
     export MAILGUN_API_DOMAIN
@@ -127,6 +129,7 @@ function make_config {
         -e "s#@BPAM_REGISTRATION_LOG_KEY@#$BPAM_REGISTRATION_LOG_KEY#" \
         -e "s#@BPAM_REGISTRATION_LOG_URL@#$BPAM_REGISTRATION_LOG_URL#" \
         -e "s#@BPAOTU_AUTH_SECRET_KEY@#$BPAOTU_AUTH_SECRET_KEY#" \
+        -e "s#@S3FILESTORE_CHECK_ACCESS_ON_STARTUP@#$S3FILESTORE_CHECK_ACCESS_ON_STARTUP#" \
         -e "s#@SESSION_SECRET@#$SESSION_SECRET#" \
         -e "s#@APITOKEN_SECRET@#$APITOKEN_SECRET#" /etc/ckan/default/ckan.ini
     sed -i \
