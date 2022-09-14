@@ -14,17 +14,17 @@ https://github.com/ckan/ckanext-harvest/archive/v1.4.0.tar.gz
 # local forks so we can tag them (no upstream releases)
 https://github.com/BioplatformsAustralia/ckanext-googleanalytics/archive/v2.0.7bioplatforms1.tar.gz
 https://github.com/BioplatformsAustralia/ckanext-pages/archive/v0.3.7bioplatforms1.tar.gz
-https://github.com/BioplatformsAustralia/ckanext-spatial/archive/0.2.4.tar.gz
-https://github.com/BioplatformsAustralia/ckanext-scheming/archive/interim-1.0.4.tar.gz
+https://github.com/BioplatformsAustralia/ckanext-spatial/archive/v1.0.0bioplatforms1.tar.gz
+https://github.com/BioplatformsAustralia/ckanext-scheming/archive/release-2.1.0bioplatforms1.tar.gz
 https://github.com/BioplatformsAustralia/ckanext-hierarchy/archive/0.1.0.tar.gz
-https://github.com/BioplatformsAustralia/ckanext-s3filestore/archive/1.0.0-bioplatforms3.tar.gz
-https://github.com/BioplatformsAustralia/ckanext-ytp-request/archive/1.0.0-bioplatforms10.tar.gz
+https://github.com/BioplatformsAustralia/ckanext-s3filestore/archive/1.0.0-bioplatforms6.tar.gz
+https://github.com/BioplatformsAustralia/ckanext-ytp-request/archive/1.0.0-bioplatforms12.tar.gz
 
 # developed by Bioplatforms/CCG/QCIF
-https://github.com/BioplatformsAustralia/ckanext-bpatheme/archive/3.4.1.tar.gz
+https://github.com/BioplatformsAustralia/ckanext-bpatheme/archive/3.4.3.tar.gz
 https://github.com/BioplatformsAustralia/ckanext-bpaschema/archive/4.0.4.tar.gz
-https://github.com/BioplatformsAustralia/ckanext-bulk/archive/1.3.12.tar.gz
-https://github.com/BioplatformsAustralia/ckanext-initiatives/archive/1.1.0.tar.gz
+https://github.com/BioplatformsAustralia/ckanext-bulk/archive/1.4.0.tar.gz
+https://github.com/BioplatformsAustralia/ckanext-initiatives/archive/1.2.0.tar.gz
 
 # third party libaries
 polib==1.1.1
