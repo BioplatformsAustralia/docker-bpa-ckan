@@ -12,7 +12,7 @@ https://github.com/ckan/ckanext-geoview/archive/v0.0.20.tar.gz
 https://github.com/ckan/ckanext-harvest/archive/v1.4.0.tar.gz
 
 # local forks so we can tag them (no upstream releases)
-https://github.com/BioplatformsAustralia/ckanext-googleanalytics/archive/v2.0.7bioplatforms1.tar.gz
+https://github.com/BioplatformsAustralia/ckanext-googleanalytics/archive/v2.1.1bioplatforms1.tar.gz
 https://github.com/BioplatformsAustralia/ckanext-pages/archive/v0.3.7bioplatforms1.tar.gz
 https://github.com/BioplatformsAustralia/ckanext-spatial/archive/v1.0.0bioplatforms1.tar.gz
 https://github.com/BioplatformsAustralia/ckanext-scheming/archive/release-2.1.0bioplatforms1.tar.gz
