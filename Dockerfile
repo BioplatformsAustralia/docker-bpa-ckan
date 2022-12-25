@@ -27,17 +27,23 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
   zlib1g-dev \
   proj-bin \
   libproj-dev \
+  xmlsec1 \
+  rustc \
+  cargo \
   && apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 RUN mkdir -p /etc/ckan /var/www/storage && \
     chown -R bioplatforms /var/www
 
+RUN mkdir /etc/saml2auth/
+
 COPY etc/ckan /etc/ckan/
 COPY etc/uwsgi /etc/uwsgi/
+COPY etc/saml2auth /etc/saml2auth/
 
 RUN mkdir /app /env
 RUN chown bioplatforms /app /env
-RUN chown -R bioplatforms /etc/ckan/default/ /etc/ckan/requirements/ /etc/uwsgi/
+RUN chown -R bioplatforms /etc/ckan/default/ /etc/ckan/requirements/ /etc/uwsgi/ /etc/saml2auth/
 
 RUN pip install --upgrade virtualenv pip
 
@@ -72,6 +78,9 @@ RUN curl -o /etc/ckan/requirements/ckanext-googleanalytics-requirements.txt http
   && pip install --upgrade -r /etc/ckan/requirements/ckanext-googleanalytics-requirements.txt
 
 RUN curl -o /etc/ckan/requirements/ckan-requirements.txt https://raw.githubusercontent.com/BioplatformsAustralia/ckan/bioplatforms-2.9/requirements.txt \
+  && pip install --upgrade -r /etc/ckan/requirements/ckan-requirements.txt
+
+RUN curl -o /etc/ckan/requirements/ckan-requirements.txt https://raw.githubusercontent.com/tino097/ckanext-saml2auth/main/dev-requirements.txt \
   && pip install --upgrade -r /etc/ckan/requirements/ckan-requirements.txt
 
 RUN cat /etc/ckan/requirements/bioplatforms-post-ckan-requirements.txt
