@@ -18,11 +18,11 @@ https://github.com/BioplatformsAustralia/ckanext-spatial/archive/v1.0.0bioplatfo
 https://github.com/BioplatformsAustralia/ckanext-scheming/archive/release-2.1.0bioplatforms1.tar.gz
 https://github.com/BioplatformsAustralia/ckanext-hierarchy/archive/1.2.0bioplatforms1.tar.gz
 https://github.com/BioplatformsAustralia/ckanext-s3filestore/archive/1.0.0+bioplatforms11.tar.gz
-https://github.com/BioplatformsAustralia/ckanext-ytp-request/archive/1.0.0+bioplatforms18.tar.gz
+https://github.com/BioplatformsAustralia/ckanext-ytp-request/archive/1.0.0+bioplatforms19.tar.gz
 
 # developed by Bioplatforms/CCG/QCIF
 https://github.com/BioplatformsAustralia/ckanext-bpatheme/archive/3.4.23.tar.gz
-https://github.com/BioplatformsAustralia/ckanext-bpaschema/archive/4.0.8.tar.gz
+https://github.com/BioplatformsAustralia/ckanext-bpaschema/archive/4.0.9.tar.gz
 https://github.com/BioplatformsAustralia/ckanext-bulk/archive/1.5.6.tar.gz
 https://github.com/BioplatformsAustralia/ckanext-initiatives/archive/1.2.1.tar.gz
 
