@@ -9,7 +9,7 @@ python /etc/ckan/deployment/perms.py
 echo "** db init"
 ckan db init
 echo "** datastore permissions"
-ckan datastore set-permissions | psql "$CKAN_DATASTORE_WRITE_URL"
+ckan datastore set-permissions
 echo "** create sysadmin"
 ckan sysadmin add admin
 echo "** setup ytp-request"
