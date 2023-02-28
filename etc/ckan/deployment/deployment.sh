@@ -7,8 +7,10 @@ cd /etc/ckan/deployment/ || exit 1
 echo "** fixing up database permissions **"
 python /etc/ckan/deployment/perms.py
 echo "** db init"
-paster --plugin=ckan db init
+ckan db init
 echo "** datastore permissions"
-paster --plugin=ckan datastore set-permissions
+ckan datastore set-permissions
 echo "** create sysadmin"
-paster --plugin=ckan sysadmin add admin
+ckan sysadmin add admin
+echo "** setup ytp-request"
+ckan opendata-request init-db
