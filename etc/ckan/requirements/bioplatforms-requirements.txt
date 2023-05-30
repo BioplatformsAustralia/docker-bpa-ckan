@@ -38,5 +38,7 @@ pandas==1.4.3
 bitmath
 # for Python 2 to 3 migration
 six
+# for CKAN 2.9.9 beaker changes
+cryptography
 
 Flask-DebugToolbar==0.13.1
