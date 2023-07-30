@@ -62,7 +62,7 @@ ENV PYTHONUNBUFFERED 1
 RUN cat /etc/ckan/requirements/bioplatforms-requirements.txt \
   && pip install --upgrade -r /etc/ckan/requirements/bioplatforms-requirements.txt
 
-RUN curl -o /etc/ckan/requirements/ckanext-spatial-requirements.txt https://raw.githubusercontent.com/BioplatformsAustralia/ckanext-spatial/v1.0.0bioplatforms1/requirements.txt \
+RUN curl -o /etc/ckan/requirements/ckanext-spatial-requirements.txt https://raw.githubusercontent.com/BioplatformsAustralia/ckanext-spatial/v2.0.0bioplatforms1/requirements.txt \
   && pip install --upgrade -r /etc/ckan/requirements/ckanext-spatial-requirements.txt
 
 RUN curl -o /etc/ckan/requirements/ckanext-harvest-requirements.txt https://raw.githubusercontent.com/ckan/ckanext-harvest/v1.4.0/pip-requirements.txt \
