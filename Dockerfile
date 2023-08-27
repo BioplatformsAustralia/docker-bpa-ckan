@@ -1,4 +1,4 @@
-FROM python:3.9-slim
+FROM python:3.9-bullseye
 LABEL maintainer "https://github.com/BioplatformsAustralia"
 
 RUN addgroup --gid 1000 bioplatforms \
@@ -66,7 +66,7 @@ ENV PYTHONUNBUFFERED 1
 RUN cat /etc/ckan/requirements/bioplatforms-requirements.txt \
   && pip install --upgrade -r /etc/ckan/requirements/bioplatforms-requirements.txt
 
-RUN curl -o /etc/ckan/requirements/ckanext-spatial-requirements.txt https://raw.githubusercontent.com/BioplatformsAustralia/ckanext-spatial/v1.0.0bioplatforms1/requirements.txt \
+RUN curl -o /etc/ckan/requirements/ckanext-spatial-requirements.txt https://raw.githubusercontent.com/BioplatformsAustralia/ckanext-spatial/v2.0.0bioplatforms1/requirements.txt \
   && pip install --upgrade -r /etc/ckan/requirements/ckanext-spatial-requirements.txt
 
 RUN curl -o /etc/ckan/requirements/ckanext-harvest-requirements.txt https://raw.githubusercontent.com/ckan/ckanext-harvest/v1.4.0/pip-requirements.txt \
@@ -86,8 +86,8 @@ RUN pip install celery==5.2.7
 RUN pip install GeoAlchemy2==0.11.1
 
 COPY docker-entrypoint.sh /docker-entrypoint.sh
-RUN curl -o /etc/ckan/default/who.ini https://raw.githubusercontent.com/ckan/ckan/ckan-2.9.5/ckan/config/who.ini
-RUN curl -o /etc/ckan/default/wsgi.py https://raw.githubusercontent.com/ckan/ckan/ckan-2.9.5/wsgi.py
+RUN curl -o /etc/ckan/default/who.ini https://raw.githubusercontent.com/ckan/ckan/ckan-2.9.9/ckan/config/who.ini
+RUN curl -o /etc/ckan/default/wsgi.py https://raw.githubusercontent.com/ckan/ckan/ckan-2.9.9/wsgi.py
 RUN pip install -U --no-binary :all: psycopg2
 
 EXPOSE 9100 9101

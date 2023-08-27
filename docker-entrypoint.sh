@@ -88,6 +88,7 @@ function defaults {
     export EMAIL_TO EMAIL_FROM SMTP_SERVER SMTP_USER SMTP_PASSWORD SMTP_MAIL_FROM CKAN_PREFIX CKAN_SMTP_STARTTLS
     export UWSGI_PROCESSES UWSGI_THREADS
     export S3FILESTORE_CHECK_ACCESS_ON_STARTUP
+    export BEAKER_ENCRYPT_KEY BEAKER_VALIDATE_KEY
 
     export MAILGUN_API_KEY
     export MAILGUN_API_DOMAIN
@@ -133,6 +134,8 @@ function make_config {
         -e "s#@BPAM_REGISTRATION_LOG_URL@#$BPAM_REGISTRATION_LOG_URL#" \
         -e "s#@BPAOTU_AUTH_SECRET_KEY@#$BPAOTU_AUTH_SECRET_KEY#" \
         -e "s#@S3FILESTORE_CHECK_ACCESS_ON_STARTUP@#$S3FILESTORE_CHECK_ACCESS_ON_STARTUP#" \
+        -e "s#@BEAKER_ENCRYPT_KEY@#$BEAKER_ENCRYPT_KEY#" \
+        -e "s#@BEAKER_VALIDATE_KEY@#$BEAKER_VALIDATE_KEY#" \
         -e "s#@SESSION_SECRET@#$SESSION_SECRET#" \
         -e "s#@CKANEXT_CILOGIN_BASE_URL@#$CKANEXT_CILOGIN_BASE_URL#" \
         -e "s#@CKANEXT_CILOGIN_USERNAME@#$CKANEXT_CILOGIN_USERNAME#" \
@@ -193,7 +196,7 @@ if [ "$1" = 'uwsgi' ]; then
 
     if [ x"$LOCAL_DEV" = x"yes" ]; then
       # install local copies of various modules
-      for mod in ckan ckanext-bulk ckanext-bpatheme ckanext-bpaschema ckanext-s3filestore ckanext-scheming ckanext-spatial ckanext-initiatives ckanext-ytp-request ckanext-saml2auth ckanext-cilogin; do
+      for mod in ckan ckanext-bulk ckanext-bpatheme ckanext-bpaschema ckanext-s3filestore ckanext-scheming ckanext-spatial ckanext-initiatives ckanext-ytp-request ckanext-shopping-cart ckanext-saml2auth ckanext-cilogin; do
           cd /app/"$mod" && pip install -U -e .
       done
       exec uwsgi --die-on-term --ini ${UWSGI_OPTS} --py-autoreload 1
