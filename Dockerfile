@@ -27,6 +27,9 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
   zlib1g-dev \
   proj-bin \
   libproj-dev \
+  xmlsec1 \
+  rustc \
+  cargo \
   && apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 RUN mkdir -p /etc/ckan /var/www/storage && \
@@ -34,10 +37,11 @@ RUN mkdir -p /etc/ckan /var/www/storage && \
 
 COPY etc/ckan /etc/ckan/
 COPY etc/uwsgi /etc/uwsgi/
+COPY etc/saml2auth /etc/saml2auth/
 
 RUN mkdir /app /env
 RUN chown bioplatforms /app /env
-RUN chown -R bioplatforms /etc/ckan/default/ /etc/ckan/requirements/ /etc/uwsgi/
+RUN chown -R bioplatforms /etc/ckan/default/ /etc/ckan/requirements/ /etc/uwsgi/ /etc/saml2auth/
 
 RUN pip install --upgrade virtualenv pip
 

@@ -137,6 +137,26 @@ function make_config {
         -e "s#@BEAKER_ENCRYPT_KEY@#$BEAKER_ENCRYPT_KEY#" \
         -e "s#@BEAKER_VALIDATE_KEY@#$BEAKER_VALIDATE_KEY#" \
         -e "s#@SESSION_SECRET@#$SESSION_SECRET#" \
+        -e "s#@CKANEXT_CILOGIN_BASE_URL@#$CKANEXT_CILOGIN_BASE_URL#" \
+        -e "s#@CKANEXT_CILOGIN_USERNAME@#$CKANEXT_CILOGIN_USERNAME#" \
+        -e "s#@CKANEXT_CILOGIN_PASSWORD@#$CKANEXT_CILOGIN_PASSWORD#" \
+        -e "s#@CKANEXT_CILOGIN_COID@#$CKANEXT_CILOGIN_COID#" \
+        -e "s#@CKANEXT_CILOGIN_PASSWORD_AUTHENTICATOR_ID@#$CKANEXT_CILOGIN_PASSWORD_AUTHENTICATOR_ID#" \
+        -e "s#@CKANEXT_SAML2AUTH_USER_FIRSTNAME@#$CKANEXT_SAML2AUTH_USER_FIRSTNAME#" \
+        -e "s#@CKANEXT_SAML2AUTH_USER_LASTNAME@#$CKANEXT_SAML2AUTH_USER_LASTNAME#" \
+        -e "s#@CKANEXT_SAML2AUTH_IDP_METADATA_LOCATION@#$CKANEXT_SAML2AUTH_IDP_METADATA_LOCATION#" \
+        -e "s#@CKANEXT_SAML2AUTH_IDP_METADATA_LOCATION_PATH@#$CKANEXT_SAML2AUTH_IDP_METADATA_LOCATION_PATH#" \
+        -e "s#@CKANEXT_SAML2AUTH_USER_EMAIL@#$CKANEXT_SAML2AUTH_USER_EMAIL#" \
+        -e "s#@CKANEXT_SAML2AUTH_ENABLE_CKAN_INTERNAL_LOGIN@#$CKANEXT_SAML2AUTH_ENABLE_CKAN_INTERNAL_LOGIN#" \
+        -e "s#@CKANEXT_SAML2AUTH_ASC_ENDPOINT@#$CKANEXT_SAML2AUTH_ASC_ENDPOINT#" \
+        -e "s#@CKANEXT_SAML2AUTH_SYSADMINS_LIST@#$CKANEXT_SAML2AUTH_SYSADMINS_LIST#" \
+        -e "s#@CKANEXT_SAML2AUTH_ENTITY_ID@#$CKANEXT_SAML2AUTH_ENTITY_ID#" \
+        -e "s#@CKANEXT_SAML2AUTH_ALLOW_UNKNOWN_ATTRIBUTES@#$CKANEXT_SAML2AUTH_ALLOW_UNKNOWN_ATTRIBUTES#" \
+        -e "s#@CKANEXT_SAML2AUTH_SP_NAME_ID_FORMAT@#$CKANEXT_SAML2AUTH_SP_NAME_ID_FORMAT#" \
+        -e "s#@CKANEXT_SAML2AUTH_ATTRIBUTE_MAP_DIR@#$CKANEXT_SAML2AUTH_ATTRIBUTE_MAP_DIR#" \
+        -e "s#@CKANEXT_SAML2AUTH_ALLOW_UNSOLICITED@#$CKANEXT_SAML2AUTH_ALLOW_UNSOLICITED#" \
+        -e "s#@CKANEXT_SAML2AUTH_REQUIRED_ATTRIBUTES@#$CKANEXT_SAML2AUTH_REQUIRED_ATTRIBUTES#" \
+        -e "s#@CKANEXT_SAML2AUTH_WANT_ASSERTIONS_SIGNED@#$CKANEXT_SAML2AUTH_WANT_ASSERTIONS_SIGNED#" \
         -e "s#@APITOKEN_SECRET@#$APITOKEN_SECRET#" /etc/ckan/default/ckan.ini
     sed -i \
         -e "s#@UWSGI_THREADS@#$UWSGI_THREADS#" \
@@ -176,7 +196,7 @@ if [ "$1" = 'uwsgi' ]; then
 
     if [ x"$LOCAL_DEV" = x"yes" ]; then
       # install local copies of various modules
-      for mod in ckan ckanext-bulk ckanext-bpatheme ckanext-bpaschema ckanext-s3filestore ckanext-scheming ckanext-spatial ckanext-initiatives ckanext-ytp-request ckanext-shopping-cart; do
+      for mod in ckan ckanext-bulk ckanext-bpatheme ckanext-bpaschema ckanext-s3filestore ckanext-scheming ckanext-spatial ckanext-initiatives ckanext-ytp-request ckanext-shopping-cart ckanext-saml2auth ckanext-cilogin; do
           cd /app/"$mod" && pip install -U -e .
       done
       exec uwsgi --die-on-term --ini ${UWSGI_OPTS} --py-autoreload 1
