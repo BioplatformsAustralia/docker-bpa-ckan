@@ -28,7 +28,7 @@ https://github.com/BioplatformsAustralia/ckanext-bulk/archive/1.5.10.tar.gz
 https://github.com/BioplatformsAustralia/ckanext-initiatives/archive/1.2.2.tar.gz
 
 # developed by tino097
-https://github.com/tino097/ckanext-drs.git
+https://github.com/tino097/ckanext-drs/archive/0.0.1.tar.gz
 
 # third party libaries
 polib==1.1.1
