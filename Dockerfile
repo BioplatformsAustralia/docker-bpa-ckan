@@ -6,7 +6,7 @@ RUN addgroup --gid 1000 bioplatforms \
   && mkdir /data \
   && chown bioplatforms:bioplatforms /data
 
-RUN apt-get update && apt-get install -y --no-install-recommends \
+RUN apt-get install -y apt-transport-https && apt-get install -y ca-certificates && apt-get update && apt-get install -y --no-install-recommends \
   build-essential \
   curl \
   git \
