@@ -37,6 +37,8 @@ uwsgitop
 testrepository
 flask-babel==2.0.0
 pandas==1.4.3
+#numpy V2 has breaking changes, especially in ckanext-spatial
+numpy<2
 bitmath
 # for Python 2 to 3 migration
 six
