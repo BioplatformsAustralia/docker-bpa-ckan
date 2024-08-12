@@ -17,7 +17,7 @@ https://github.com/BioplatformsAustralia/ckanext-pages/archive/v0.3.7bioplatform
 https://github.com/BioplatformsAustralia/ckanext-spatial/archive/v2.0.0bioplatforms1.tar.gz
 https://github.com/BioplatformsAustralia/ckanext-scheming/archive/release-2.1.0bioplatforms1.tar.gz
 https://github.com/BioplatformsAustralia/ckanext-hierarchy/archive/1.2.0bioplatforms1.tar.gz
-https://github.com/BioplatformsAustralia/ckanext-s3filestore/archive/1.0.0+bioplatforms11.tar.gz
+https://github.com/BioplatformsAustralia/ckanext-s3filestore/archive/1.0.0+bioplatforms13.tar.gz
 https://github.com/BioplatformsAustralia/ckanext-ytp-request/archive/1.0.0+bioplatforms20.tar.gz
 https://github.com/BioplatformsAustralia/ckanext-shopping-cart/archive/0.0.4+bioplatforms3.tar.gz
 
