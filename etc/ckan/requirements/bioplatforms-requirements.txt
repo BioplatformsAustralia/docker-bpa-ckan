@@ -29,7 +29,7 @@ https://github.com/BioplatformsAustralia/ckanext-initiatives/archive/1.3.3.tar.g
 https://github.com/BioplatformsAustralia/ckanext-laissezpasser/archive/1.0.3.tar.gz
 
 # developed by tino097, now maintained by Bioplatforms
-https://github.com/BioplatformsAustralia/ckanext-drs/archive/1.1.5.tar.gz
+https://github.com/BioplatformsAustralia/ckanext-drs/archive/1.1.6.tar.gz
 
 # third party libaries
 polib==1.1.1
