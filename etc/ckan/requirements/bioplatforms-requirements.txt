@@ -22,7 +22,7 @@ https://github.com/BioplatformsAustralia/ckanext-ytp-request/archive/1.0.0+biopl
 https://github.com/BioplatformsAustralia/ckanext-shopping-cart/archive/0.0.4+bioplatforms3.tar.gz
 
 # developed by Bioplatforms/CCG/QCIF
-https://github.com/BioplatformsAustralia/ckanext-bpatheme/archive/3.4.66.tar.gz
+https://github.com/BioplatformsAustralia/ckanext-bpatheme/archive/3.4.67.tar.gz
 https://github.com/BioplatformsAustralia/ckanext-bpaschema/archive/4.1.10.tar.gz
 https://github.com/BioplatformsAustralia/ckanext-bulk/archive/1.7.1.tar.gz
 https://github.com/BioplatformsAustralia/ckanext-initiatives/archive/1.3.3.tar.gz
