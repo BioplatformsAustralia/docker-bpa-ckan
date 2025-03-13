@@ -1,5 +1,5 @@
 ckanserviceprovider==0.0.11
-https://github.com/BioplatformsAustralia/ckan/archive/2.9.11-bioplatforms1.tar.gz
+https://github.com/BioplatformsAustralia/ckan/archive/2.9.12-bioplatforms1.tar.gz
 
 ckanapi==4.7
 ckantoolkit
