@@ -27,7 +27,11 @@ https://github.com/BioplatformsAustralia/ckanext-bpaschema/archive/4.4.5.tar.gz
 https://github.com/BioplatformsAustralia/ckanext-bulk/archive/1.7.5.tar.gz
 https://github.com/BioplatformsAustralia/ckanext-initiatives/archive/1.4.2.tar.gz
 https://github.com/BioplatformsAustralia/ckanext-laissezpasser/archive/1.0.3.tar.gz
+<<<<<<< HEAD
 https://github.com/BioplatformsAustralia/ckanext-oidc-pkce-bpa/archive/refs/heads/main.zip
+=======
+https://github.com/BioplatformsAustralia/ckanext-oidc-pkce/archive/master.tar.gz
+>>>>>>> 8a10d53 (add oicd ckan extention related changes)
 
 # developed by tino097, now maintained by Bioplatforms
 https://github.com/BioplatformsAustralia/ckanext-drs/archive/1.1.7.tar.gz
