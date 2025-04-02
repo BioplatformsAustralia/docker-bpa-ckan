@@ -27,6 +27,7 @@ https://github.com/BioplatformsAustralia/ckanext-bpaschema/archive/4.4.5.tar.gz
 https://github.com/BioplatformsAustralia/ckanext-bulk/archive/1.7.5.tar.gz
 https://github.com/BioplatformsAustralia/ckanext-initiatives/archive/1.4.2.tar.gz
 https://github.com/BioplatformsAustralia/ckanext-laissezpasser/archive/1.0.3.tar.gz
+https://github.com/BioplatformsAustralia/ckanext-oidc-pkce-bpa/archive/refs/heads/main.zip
 
 # developed by tino097, now maintained by Bioplatforms
 https://github.com/BioplatformsAustralia/ckanext-drs/archive/1.1.7.tar.gz
@@ -49,3 +50,5 @@ six
 cryptography
 
 Flask-DebugToolbar==0.13.1
+# for OICD authentication
+ckanext-oidc-pkce-bpa
