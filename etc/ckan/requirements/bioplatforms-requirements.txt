@@ -6,7 +6,7 @@ ckantoolkit
 
 https://github.com/ckan/datapusher/archive/0.0.18.tar.gz
 https://github.com/ckan/ckanext-pdfview/archive/0.0.6.tar.gz
-https://github.com/ckan/ckanext-geoview/archive/v0.0.20.tar.gz
+https://github.com/ckan/ckanext-geoview/archive/v0.2.2.tar.gz
 
 # Dependency for ckanext-spatial
 https://github.com/ckan/ckanext-harvest/archive/v1.4.0.tar.gz
