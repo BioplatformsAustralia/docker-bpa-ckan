@@ -89,6 +89,7 @@ function defaults {
     export UWSGI_PROCESSES UWSGI_THREADS
     export S3FILESTORE_CHECK_ACCESS_ON_STARTUP
     export BEAKER_ENCRYPT_KEY BEAKER_VALIDATE_KEY
+    export WTF_CSRF_SECRET_KEY
 
     export MAILGUN_API_KEY
     export MAILGUN_API_DOMAIN
@@ -136,6 +137,7 @@ function make_config {
         -e "s#@S3FILESTORE_CHECK_ACCESS_ON_STARTUP@#$S3FILESTORE_CHECK_ACCESS_ON_STARTUP#" \
         -e "s#@BEAKER_ENCRYPT_KEY@#$BEAKER_ENCRYPT_KEY#" \
         -e "s#@BEAKER_VALIDATE_KEY@#$BEAKER_VALIDATE_KEY#" \
+        -e "s#@WTF_CSRF_SECRET_KEY@#$WTF_CSRF_SECRET_KEY#" \
         -e "s#@SESSION_SECRET@#$SESSION_SECRET#" \
         -e "s#@APITOKEN_SECRET@#$APITOKEN_SECRET#" /etc/ckan/default/ckan.ini
     sed -i \
