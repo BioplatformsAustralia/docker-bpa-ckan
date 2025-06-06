@@ -1,5 +1,5 @@
 ckanserviceprovider==0.0.11
-https://github.com/BioplatformsAustralia/ckan/archive/2.9.11-bioplatforms1.tar.gz
+https://github.com/BioplatformsAustralia/ckan/archive/2.10.8-bioplatforms1.tar.gz
 
 ckanapi==4.7
 ckantoolkit
@@ -13,8 +13,8 @@ https://github.com/ckan/ckanext-harvest/archive/v1.4.0.tar.gz
 
 # local forks so we can tag them (no upstream releases)
 https://github.com/BioplatformsAustralia/ckanext-googleanalytics/archive/v2.5.1-bioplatforms1.tar.gz
-https://github.com/BioplatformsAustralia/ckanext-pages/archive/v0.5.2bioplatforms2.tar.gz
-https://github.com/BioplatformsAustralia/ckanext-spatial/archive/v2.3.0bioplatforms1.tar.gz
+https://github.com/BioplatformsAustralia/ckanext-pages/archive/v0.5.2-bioplatforms2.tar.gz
+https://github.com/BioplatformsAustralia/ckanext-spatial/archive/v2.3.0-bioplatforms1.tar.gz
 https://github.com/BioplatformsAustralia/ckanext-scheming/archive/release-2.1.0bioplatforms1.tar.gz
 https://github.com/BioplatformsAustralia/ckanext-hierarchy/archive/1.2.0bioplatforms1.tar.gz
 https://github.com/BioplatformsAustralia/ckanext-s3filestore/archive/1.0.0+bioplatforms15.tar.gz

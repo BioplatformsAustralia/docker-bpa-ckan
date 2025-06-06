@@ -47,7 +47,7 @@ ENV HOME /data
 WORKDIR /data
 
 ENV VIRTUAL_ENV /env
-ENV PYTHON_PIP_VERSION 22.1.2
+ENV PYTHON_PIP_VERSION 25.1.1
 ENV PIP_NO_CACHE_DIR="off"
 
 # create a virtual env in $VIRTUAL_ENV and ensure it respects pip version
@@ -71,7 +71,7 @@ RUN curl -o /etc/ckan/requirements/ckanext-harvest-requirements.txt https://raw.
 RUN curl -o /etc/ckan/requirements/ckanext-googleanalytics-requirements.txt https://raw.githubusercontent.com/BioplatformsAustralia/ckanext-googleanalytics/v2.0.7bioplatforms1/requirements.txt \
   && pip install --upgrade -r /etc/ckan/requirements/ckanext-googleanalytics-requirements.txt
 
-RUN curl -o /etc/ckan/requirements/ckan-requirements.txt https://raw.githubusercontent.com/BioplatformsAustralia/ckan/bioplatforms-2.9/requirements.txt \
+RUN curl -o /etc/ckan/requirements/ckan-requirements.txt https://raw.githubusercontent.com/BioplatformsAustralia/ckan/bioplatforms-2.10/requirements.txt \
   && pip install --upgrade -r /etc/ckan/requirements/ckan-requirements.txt
 
 RUN cat /etc/ckan/requirements/bioplatforms-post-ckan-requirements.txt
