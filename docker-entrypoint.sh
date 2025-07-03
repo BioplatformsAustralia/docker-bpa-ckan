@@ -67,7 +67,7 @@ function defaults {
     : ${CKAN_DATASTORE_WRITE_URL="postgres://${DATASTORE_DBUSER}:${DATASTORE_DBPASS}@${DATASTORE_DBSERVER}/${DATASTORE_DBNAME}"}
     : ${CKAN_DATASTORE_READ_URL="postgres://${DATASTORE_DB_READONLY_USER}:${DATASTORE_DB_READONLY_PASS}@${DATASTORE_DBSERVER}/${DATASTORE_DBNAME}"}
     : ${CKAN_SOLR_URL="http://solr:8983/solr/ckan"}
-    : ${CKAN_SITE_URL:="https://localhost:8443/"}
+    : ${CKAN_SITE_URL:="https://aaidemo.bioplatforms.com"}
     : ${GOOGLE_UA:="UA-UNSET"}
     : ${GOOGLE_GA:="${GOOGLE_UA}"}
     : ${GOOGLE_ANALYTICS_ID:="${GOOGLE_GA}"}
@@ -176,7 +176,7 @@ if [ "$1" = 'uwsgi' ]; then
 
     if [ x"$LOCAL_DEV" = x"yes" ]; then
       # install local copies of various modules
-      for mod in ckan ckanext-bulk ckanext-bpatheme ckanext-bpaschema ckanext-s3filestore ckanext-scheming ckanext-spatial ckanext-initiatives ckanext-ytp-request ckanext-shopping-cart ckanext-laissezpasser ckanext-drs; do
+      for mod in ckan ckanext-bulk ckanext-bpatheme ckanext-bpaschema ckanext-s3filestore ckanext-scheming ckanext-spatial ckanext-initiatives ckanext-ytp-request ckanext-shopping-cart ckanext-laissezpasser ckanext-drs ckanext-oidc-pkce-bpa; do
           cd /app/"$mod" && pip install -U -e .
       done
       exec uwsgi --die-on-term --ini ${UWSGI_OPTS} --py-autoreload 1
