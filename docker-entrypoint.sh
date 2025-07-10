@@ -105,6 +105,10 @@ function defaults {
     export BPAM_REGISTRATION_LOG_URL
 
     export BPAOTU_AUTH_SECRET_KEY
+
+    export CKANEXT_OIDC_PKCE_BASE_URL
+    export CKANEXT_OIDC_PKCE_CLIENT_ID
+    export CKANEXT_OIDC_PKCE_CLIENT_SECRET
 }
 
 
@@ -137,7 +141,10 @@ function make_config {
         -e "s#@BEAKER_ENCRYPT_KEY@#$BEAKER_ENCRYPT_KEY#" \
         -e "s#@BEAKER_VALIDATE_KEY@#$BEAKER_VALIDATE_KEY#" \
         -e "s#@SESSION_SECRET@#$SESSION_SECRET#" \
-        -e "s#@APITOKEN_SECRET@#$APITOKEN_SECRET#" /etc/ckan/default/ckan.ini
+        -e "s#@APITOKEN_SECRET@#$APITOKEN_SECRET#" /etc/ckan/default/ckan.ini \
+        -e "s#@CKANEXT_OIDC_PKCE_BASE_URL@#$CKANEXT_OIDC_PKCE_BASE_URL#" \
+        -e "s#@CKANEXT_OIDC_PKCE_CLIENT_ID@#$CKANEXT_OIDC_PKCE_CLIENT_ID#" \
+        -e "s#@CKANEXT_OIDC_PKCE_CLIENT_SECRET@#$CKANEXT_OIDC_PKCE_CLIENT_SECRET#" \
     sed -i \
         -e "s#@UWSGI_THREADS@#$UWSGI_THREADS#" \
         -e "s#@UWSGI_PROCESSES@#$UWSGI_PROCESSES#" /etc/uwsgi/vassals/socket-9100.ini
