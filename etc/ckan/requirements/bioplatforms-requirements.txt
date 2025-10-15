@@ -25,7 +25,7 @@ https://github.com/BioplatformsAustralia/ckanext-shopping-cart/archive/0.0.4+bio
 https://github.com/BioplatformsAustralia/ckanext-bpatheme/archive/3.4.74.tar.gz
 https://github.com/BioplatformsAustralia/ckanext-bpaschema/archive/4.4.5.tar.gz
 https://github.com/BioplatformsAustralia/ckanext-bulk/archive/1.7.5.tar.gz
-https://github.com/BioplatformsAustralia/ckanext-initiatives/archive/1.4.2.tar.gz
+https://github.com/BioplatformsAustralia/ckanext-initiatives/archive/1.4.3.tar.gz
 https://github.com/BioplatformsAustralia/ckanext-laissezpasser/archive/1.0.3.tar.gz
 
 # developed by tino097, now maintained by Bioplatforms
