@@ -58,6 +58,7 @@ ENV CKAN_HOME $VIRTUAL_ENV
 ENV PIP_NO_CACHE_DIR "off"
 ENV PYTHONUNBUFFERED 1
 
+RUN pip install setuptools==44.1.0
 # http://docs.ckan.org/en/latest/maintaining/installing/install-from-source.html
 RUN cat /etc/ckan/requirements/bioplatforms-requirements.txt \
   && pip install --upgrade -r /etc/ckan/requirements/bioplatforms-requirements.txt
