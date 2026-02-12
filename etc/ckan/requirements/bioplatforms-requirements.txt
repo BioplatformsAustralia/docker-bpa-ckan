@@ -1,5 +1,6 @@
+setuptools==44.1.0
 ckanserviceprovider==0.0.11
-https://github.com/BioplatformsAustralia/ckan/archive/2.9.11-bioplatforms2.tar.gz
+https://github.com/BioplatformsAustralia/ckan/archive/2.9.11-bioplatforms3.tar.gz
 
 ckanapi==4.7
 ckantoolkit
@@ -21,15 +22,16 @@ https://github.com/BioplatformsAustralia/ckanext-spatial/archive/v2.0.0bioplatfo
 https://github.com/BioplatformsAustralia/ckanext-scheming/archive/release-2.1.0bioplatforms1.tar.gz
 https://github.com/BioplatformsAustralia/ckanext-hierarchy/archive/1.2.0bioplatforms1.tar.gz
 https://github.com/BioplatformsAustralia/ckanext-s3filestore/archive/1.0.0+bioplatforms15.tar.gz
-https://github.com/BioplatformsAustralia/ckanext-ytp-request/archive/1.0.0+bioplatforms20.tar.gz
+https://github.com/BioplatformsAustralia/ckanext-ytp-request/archive/1.0.0+bioplatforms22.tar.gz
 https://github.com/BioplatformsAustralia/ckanext-shopping-cart/archive/0.0.4+bioplatforms3.tar.gz
 
 # developed by Bioplatforms/CCG/QCIF
-https://github.com/BioplatformsAustralia/ckanext-bpatheme/archive/3.4.74.tar.gz
-https://github.com/BioplatformsAustralia/ckanext-bpaschema/archive/4.4.5.tar.gz
+https://github.com/BioplatformsAustralia/ckanext-bpatheme/archive/3.6.0.tar.gz
+https://github.com/BioplatformsAustralia/ckanext-bpaschema/archive/4.4.9.tar.gz
 https://github.com/BioplatformsAustralia/ckanext-bulk/archive/1.7.5.tar.gz
-https://github.com/BioplatformsAustralia/ckanext-initiatives/archive/1.4.2.tar.gz
+https://github.com/BioplatformsAustralia/ckanext-initiatives/archive/1.4.4.tar.gz
 https://github.com/BioplatformsAustralia/ckanext-laissezpasser/archive/1.0.3.tar.gz
+https://github.com/BioplatformsAustralia/ckanext-aup/archive/1.0.2.tar.gz
 https://github.com/BioplatformsAustralia/ckanext-oidc-pkce-bpa/archive/master.tar.gz
 
 # developed by tino097, now maintained by Bioplatforms
