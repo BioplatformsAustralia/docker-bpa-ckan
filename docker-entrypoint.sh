@@ -67,7 +67,7 @@ function defaults {
     : ${CKAN_DATASTORE_WRITE_URL="postgres://${DATASTORE_DBUSER}:${DATASTORE_DBPASS}@${DATASTORE_DBSERVER}/${DATASTORE_DBNAME}"}
     : ${CKAN_DATASTORE_READ_URL="postgres://${DATASTORE_DB_READONLY_USER}:${DATASTORE_DB_READONLY_PASS}@${DATASTORE_DBSERVER}/${DATASTORE_DBNAME}"}
     : ${CKAN_SOLR_URL="http://solr:8983/solr/ckan"}
-    : ${CKAN_SITE_URL:="https://localhost:8443/"}
+    : ${CKAN_SITE_URL:="https://aaidemo.bioplatforms.com"}
     : ${GOOGLE_UA:="UA-UNSET"}
     : ${GOOGLE_GA:="${GOOGLE_UA}"}
     : ${GOOGLE_ANALYTICS_ID:="${GOOGLE_GA}"}
@@ -105,6 +105,19 @@ function defaults {
     export BPAM_REGISTRATION_LOG_URL
 
     export BPAOTU_AUTH_SECRET_KEY
+
+    export CKANEXT_OIDC_PKCE_BASE_URL
+    export CKANEXT_OIDC_PKCE_CLIENT_ID
+    export CKANEXT_OIDC_PKCE_CLIENT_SECRET
+    export CKANEXT_OIDC_PKCE_BPA_AUTH0_DOMAIN
+    export CKANEXT_OIDC_PKCE_BPA_API_AUDIENCE
+    export CKANEXT_OIDC_PKCE_BPA_USERNAME_CLAIM
+    export CKANEXT_OIDC_PKCE_BPA_LOGIN_REDIRECT_URL
+    export CKANEXT_OIDC_PKCE_BPA_PROFILE_REDIRECT_URL
+    export CKANEXT_OIDC_PKCE_BPA_REGISTER_REDIRECT_URL
+    export CKANEXT_OIDC_PKCE_BPA_ROLES_CLAIM
+    export CKANEXT_OIDC_PKCE_BPA_ROLE_ORG_MAPPING
+    export CKANEXT_OIDC_PKCE_BPA_SUPPORT_EMAIL
 }
 
 
@@ -137,7 +150,19 @@ function make_config {
         -e "s#@BEAKER_ENCRYPT_KEY@#$BEAKER_ENCRYPT_KEY#" \
         -e "s#@BEAKER_VALIDATE_KEY@#$BEAKER_VALIDATE_KEY#" \
         -e "s#@SESSION_SECRET@#$SESSION_SECRET#" \
-        -e "s#@APITOKEN_SECRET@#$APITOKEN_SECRET#" /etc/ckan/default/ckan.ini
+        -e "s#@APITOKEN_SECRET@#$APITOKEN_SECRET#" \
+        -e "s#@CKANEXT_OIDC_PKCE_BASE_URL@#$CKANEXT_OIDC_PKCE_BASE_URL#" \
+        -e "s#@CKANEXT_OIDC_PKCE_CLIENT_ID@#$CKANEXT_OIDC_PKCE_CLIENT_ID#" \
+        -e "s#@CKANEXT_OIDC_PKCE_CLIENT_SECRET@#$CKANEXT_OIDC_PKCE_CLIENT_SECRET#" \
+        -e "s#@CKANEXT_OIDC_PKCE_BPA_AUTH0_DOMAIN@#$CKANEXT_OIDC_PKCE_BPA_AUTH0_DOMAIN#" \
+        -e "s#@CKANEXT_OIDC_PKCE_BPA_API_AUDIENCE@#$CKANEXT_OIDC_PKCE_BPA_API_AUDIENCE#" \
+        -e "s#@CKANEXT_OIDC_PKCE_BPA_USERNAME_CLAIM@#$CKANEXT_OIDC_PKCE_BPA_USERNAME_CLAIM#" \
+        -e "s#@CKANEXT_OIDC_PKCE_BPA_LOGIN_REDIRECT_URL@#$CKANEXT_OIDC_PKCE_BPA_LOGIN_REDIRECT_URL#" \
+        -e "s#@CKANEXT_OIDC_PKCE_BPA_PROFILE_REDIRECT_URL@#$CKANEXT_OIDC_PKCE_BPA_PROFILE_REDIRECT_URL#" \
+        -e "s#@CKANEXT_OIDC_PKCE_BPA_REGISTER_REDIRECT_URL@#$CKANEXT_OIDC_PKCE_BPA_REGISTER_REDIRECT_URL#" \
+        -e "s#@CKANEXT_OIDC_PKCE_BPA_ROLES_CLAIM@#$CKANEXT_OIDC_PKCE_BPA_ROLES_CLAIM#" \
+        -e "s#@CKANEXT_OIDC_PKCE_BPA_ROLE_ORG_MAPPING@#$CKANEXT_OIDC_PKCE_BPA_ROLE_ORG_MAPPING#" \
+        -e "s#@CKANEXT_OIDC_PKCE_BPA_SUPPORT_EMAIL@#$CKANEXT_OIDC_PKCE_BPA_SUPPORT_EMAIL#" \/etc/ckan/default/ckan.ini \
     sed -i \
         -e "s#@UWSGI_THREADS@#$UWSGI_THREADS#" \
         -e "s#@UWSGI_PROCESSES@#$UWSGI_PROCESSES#" /etc/uwsgi/vassals/socket-9100.ini
@@ -176,7 +201,7 @@ if [ "$1" = 'uwsgi' ]; then
 
     if [ x"$LOCAL_DEV" = x"yes" ]; then
       # install local copies of various modules
-      for mod in ckan ckanext-bulk ckanext-bpatheme ckanext-bpaschema ckanext-s3filestore ckanext-scheming ckanext-spatial ckanext-initiatives ckanext-ytp-request ckanext-shopping-cart ckanext-laissezpasser ckanext-drs ckanext-aup; do
+      for mod in ckan ckanext-bulk ckanext-bpatheme ckanext-bpaschema ckanext-s3filestore ckanext-scheming ckanext-spatial ckanext-initiatives ckanext-ytp-request ckanext-shopping-cart ckanext-laissezpasser ckanext-drs ckanext-oidc-pkce-bpa; do
           cd /app/"$mod" && pip install -U -e .
       done
       exec uwsgi --die-on-term --ini ${UWSGI_OPTS} --py-autoreload 1
