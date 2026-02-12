@@ -176,8 +176,9 @@ if [ "$1" = 'uwsgi' ]; then
 
     if [ x"$LOCAL_DEV" = x"yes" ]; then
       # install local copies of various modules
+      pip install setuptools==44.1.0
       for mod in ckan ckanext-bulk ckanext-bpatheme ckanext-bpaschema ckanext-s3filestore ckanext-scheming ckanext-spatial ckanext-initiatives ckanext-ytp-request ckanext-shopping-cart ckanext-laissezpasser ckanext-drs ckanext-aup; do
-          cd /app/"$mod" && pip install -U -e .
+          cd /app/"$mod" && pip install --no-build-isolation -U -e .
       done
       exec uwsgi --die-on-term --ini ${UWSGI_OPTS} --py-autoreload 1
     fi
