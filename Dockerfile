@@ -55,7 +55,6 @@ ENV PIP_NO_CACHE_DIR="off"
 RUN virtualenv $VIRTUAL_ENV \
   && $VIRTUAL_ENV/bin/pip install --upgrade pip==$PYTHON_PIP_VERSION 'setuptools<70' wheel
 ENV PATH $VIRTUAL_ENV/bin:$PATH
-ENV PYTHONPATH=$VIRTUAL_ENV/lib/python3.9/site-packages:/usr/lib/python3/dist-packages
 ENV PROJECT_NAME ckan
 ENV CKAN_HOME $VIRTUAL_ENV
 ENV PIP_NO_CACHE_DIR "off"
