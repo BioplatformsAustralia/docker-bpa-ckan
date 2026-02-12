@@ -24,6 +24,7 @@ RUN apt-get install -y apt-transport-https && apt-get install -y ca-certificates
   libxml2-dev \
   libxslt1-dev \
   python3-pil \
+  python3-pkg-resources \
   zlib1g-dev \
   proj-bin \
   libproj-dev \
@@ -51,40 +52,43 @@ ENV PYTHON_PIP_VERSION 25.1.1
 ENV PIP_NO_CACHE_DIR="off"
 
 # create a virtual env in $VIRTUAL_ENV and ensure it respects pip version
-RUN virtualenv $VIRTUAL_ENV && $VIRTUAL_ENV/bin/pip install --upgrade pip==$PYTHON_PIP_VERSION
+RUN virtualenv $VIRTUAL_ENV \
+  && $VIRTUAL_ENV/bin/pip install --upgrade pip==$PYTHON_PIP_VERSION 'setuptools<70' wheel
 ENV PATH $VIRTUAL_ENV/bin:$PATH
+ENV PYTHONPATH=$VIRTUAL_ENV/lib/python3.9/site-packages:/usr/lib/python3/dist-packages
 ENV PROJECT_NAME ckan
 ENV CKAN_HOME $VIRTUAL_ENV
 ENV PIP_NO_CACHE_DIR "off"
+ENV PIP_NO_BUILD_ISOLATION 1
 ENV PYTHONUNBUFFERED 1
 
 # http://docs.ckan.org/en/latest/maintaining/installing/install-from-source.html
 RUN cat /etc/ckan/requirements/bioplatforms-requirements.txt \
-  && pip install --upgrade -r /etc/ckan/requirements/bioplatforms-requirements.txt
+  && pip install --no-build-isolation --upgrade -r /etc/ckan/requirements/bioplatforms-requirements.txt
 
 RUN curl -o /etc/ckan/requirements/ckanext-spatial-requirements.txt https://raw.githubusercontent.com/BioplatformsAustralia/ckanext-spatial/v2.0.0bioplatforms1/requirements.txt \
-  && pip install --upgrade -r /etc/ckan/requirements/ckanext-spatial-requirements.txt
+  && pip install --no-build-isolation --upgrade -r /etc/ckan/requirements/ckanext-spatial-requirements.txt
 
 RUN curl -o /etc/ckan/requirements/ckanext-harvest-requirements.txt https://raw.githubusercontent.com/ckan/ckanext-harvest/v1.4.0/pip-requirements.txt \
-  && pip install --upgrade -r /etc/ckan/requirements/ckanext-harvest-requirements.txt
+  && pip install --no-build-isolation --upgrade -r /etc/ckan/requirements/ckanext-harvest-requirements.txt
 
 RUN curl -o /etc/ckan/requirements/ckanext-googleanalytics-requirements.txt https://raw.githubusercontent.com/BioplatformsAustralia/ckanext-googleanalytics/v2.0.7bioplatforms1/requirements.txt \
-  && pip install --upgrade -r /etc/ckan/requirements/ckanext-googleanalytics-requirements.txt
+  && pip install --no-build-isolation --upgrade -r /etc/ckan/requirements/ckanext-googleanalytics-requirements.txt
 
 RUN curl -o /etc/ckan/requirements/ckan-requirements.txt https://raw.githubusercontent.com/BioplatformsAustralia/ckan/bioplatforms-2.9/requirements.txt \
-  && pip install --upgrade -r /etc/ckan/requirements/ckan-requirements.txt
+  && pip install --no-build-isolation --upgrade -r /etc/ckan/requirements/ckan-requirements.txt
 
 RUN cat /etc/ckan/requirements/bioplatforms-post-ckan-requirements.txt
-RUN pip install --upgrade -r /etc/ckan/requirements/bioplatforms-post-ckan-requirements.txt
+RUN pip install --no-build-isolation --upgrade -r /etc/ckan/requirements/bioplatforms-post-ckan-requirements.txt
 
 # pin celery version
-RUN pip install celery==5.2.7
-RUN pip install GeoAlchemy2==0.11.1
+RUN pip install --no-build-isolation celery==5.2.7
+RUN pip install --no-build-isolation GeoAlchemy2==0.11.1
 
 COPY docker-entrypoint.sh /docker-entrypoint.sh
 RUN curl -o /etc/ckan/default/who.ini https://raw.githubusercontent.com/ckan/ckan/ckan-2.9.11/ckan/config/who.ini
 RUN curl -o /etc/ckan/default/wsgi.py https://raw.githubusercontent.com/ckan/ckan/ckan-2.9.11/wsgi.py
-RUN pip install -U --no-binary :all: psycopg2
+RUN pip install --no-build-isolation -U --no-binary :all: psycopg2
 
 EXPOSE 9100 9101
 VOLUME ["/data", "/var/www/storage"]
