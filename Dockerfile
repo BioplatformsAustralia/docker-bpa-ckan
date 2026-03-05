@@ -48,20 +48,20 @@ ENV HOME /data
 WORKDIR /data
 
 ENV VIRTUAL_ENV /env
-ENV PYTHON_PIP_VERSION 22.1.2
+ENV PYTHON_PIP_VERSION 25.1.1
 ENV PIP_NO_CACHE_DIR="off"
 
 # create a virtual env in $VIRTUAL_ENV and ensure it respects pip version
 RUN virtualenv $VIRTUAL_ENV \
   && $VIRTUAL_ENV/bin/pip install --upgrade pip==$PYTHON_PIP_VERSION 'setuptools<70' wheel
 ENV PATH $VIRTUAL_ENV/bin:$PATH
+ENV PYTHONPATH=$VIRTUAL_ENV/lib/python3.9/site-packages:/usr/lib/python3/dist-packages
 ENV PROJECT_NAME ckan
 ENV CKAN_HOME $VIRTUAL_ENV
 ENV PIP_NO_CACHE_DIR "off"
 ENV PIP_NO_BUILD_ISOLATION 1
 ENV PYTHONUNBUFFERED 1
 
-RUN pip install setuptools==44.1.0
 # http://docs.ckan.org/en/latest/maintaining/installing/install-from-source.html
 RUN cat /etc/ckan/requirements/bioplatforms-requirements.txt \
   && pip install --no-build-isolation --upgrade -r /etc/ckan/requirements/bioplatforms-requirements.txt
