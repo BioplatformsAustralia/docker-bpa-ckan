@@ -62,7 +62,6 @@ ENV PIP_NO_CACHE_DIR "off"
 ENV PIP_NO_BUILD_ISOLATION 1
 ENV PYTHONUNBUFFERED 1
 
-RUN pip install setuptools==44.1.0
 # http://docs.ckan.org/en/latest/maintaining/installing/install-from-source.html
 RUN cat /etc/ckan/requirements/bioplatforms-requirements.txt \
   && pip install --no-build-isolation --upgrade -r /etc/ckan/requirements/bioplatforms-requirements.txt
