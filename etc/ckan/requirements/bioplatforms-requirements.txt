@@ -1,4 +1,4 @@
-setuptools==44.1.0
+setuptools==78.1.1
 ckanserviceprovider==0.0.11
 https://github.com/BioplatformsAustralia/ckan/archive/2.9.11-bioplatforms6.tar.gz
 
