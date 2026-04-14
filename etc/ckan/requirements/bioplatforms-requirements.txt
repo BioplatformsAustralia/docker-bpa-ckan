@@ -32,10 +32,10 @@ https://github.com/BioplatformsAustralia/ckanext-bulk/archive/1.7.6.tar.gz
 https://github.com/BioplatformsAustralia/ckanext-initiatives/archive/1.4.4.tar.gz
 https://github.com/BioplatformsAustralia/ckanext-laissezpasser/archive/1.0.4.tar.gz
 https://github.com/BioplatformsAustralia/ckanext-aup/archive/1.0.2.tar.gz
-https://github.com/BioplatformsAustralia/ckanext-oidc-pkce-bpa/archive/1.0.2.tar.gz
+https://github.com/BioplatformsAustralia/ckanext-oidc-pkce-bpa/archive/1.0.3.tar.gz
 
 # developed by tino097, now maintained by Bioplatforms
-https://github.com/BioplatformsAustralia/ckanext-drs/archive/1.1.7.tar.gz
+https://github.com/BioplatformsAustralia/ckanext-drs/archive/1.1.9.tar.gz
 
 # third party libaries
 polib==1.1.1
