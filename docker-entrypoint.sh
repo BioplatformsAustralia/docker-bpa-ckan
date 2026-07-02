@@ -119,6 +119,11 @@ function defaults {
     export CKANEXT_OIDC_PKCE_BPA_ROLES_CLAIM
     export CKANEXT_OIDC_PKCE_BPA_ROLE_ORG_MAPPING
     export CKANEXT_OIDC_PKCE_BPA_SUPPORT_EMAIL
+
+    export GALAXY_AU_URL
+    export GALAXY_AU_SCOPE
+    export ENABLE_GALAXY
+    export GALAXY_ENABLED_ORGS
 }
 
 
@@ -165,6 +170,10 @@ function make_config {
         -e "s#@CKANEXT_OIDC_PKCE_BPA_ROLES_CLAIM@#$CKANEXT_OIDC_PKCE_BPA_ROLES_CLAIM#" \
         -e "s#@CKANEXT_OIDC_PKCE_BPA_ROLE_ORG_MAPPING@#$CKANEXT_OIDC_PKCE_BPA_ROLE_ORG_MAPPING#" \
         -e "s#@CKANEXT_OIDC_PKCE_BPA_SUPPORT_EMAIL@#$CKANEXT_OIDC_PKCE_BPA_SUPPORT_EMAIL#" \
+        -e "s#@GALAXY_AU_URL@#$GALAXY_AU_URL#" \
+        -e "s#@GALAXY_AU_SCOPE@#$GALAXY_AU_SCOPE#" \
+        -e "s#@ENABLE_GALAXY@#$ENABLE_GALAXY#" \
+        -e "s#@GALAXY_ENABLED_ORGS@#$GALAXY_ENABLED_ORGS#" \
         /etc/ckan/default/ckan.ini \
     sed -i \
         -e "s#@UWSGI_THREADS@#$UWSGI_THREADS#" \
