@@ -11,10 +11,10 @@ RUN apt-get install -y apt-transport-https && apt-get install -y ca-certificates
   curl \
   git \
   libmagic1 \
-  libgeos-3.9.0 \
+  libgeos-3.13.1 \
   libjpeg-dev \
-  libpcre3 \
-  libpcre3-dev \
+  libpcre2 \
+  libpcre2-dev \
   libpng-dev \
   libpq5 \
   libpq-dev \
