@@ -14,7 +14,7 @@ RUN apt-get install -y apt-transport-https && apt-get install -y ca-certificates
   libgeos3.13.1 \
   libjpeg-dev \
   libpcre2-8-0 \
-  libpcre2-8-0-dev \
+  libpcre2-dev \
   libpng-dev \
   libpq5 \
   libpq-dev \
